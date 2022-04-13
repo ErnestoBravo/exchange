@@ -1,0 +1,5 @@
+def command(cfg)
+{
+    return("npm run test-coverage")
+}
+return this

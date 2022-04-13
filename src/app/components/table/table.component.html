@@ -1,0 +1,302 @@
+<div class="ux-ui-table"
+  [ngClass]="[(config.sortable === false)? 'none-sortable':'', (config.frozenHeaders)? 'frozen-table':'' ]">
+  <p-table [value]="model" [responsive]="itsResponsive" [pageLinkSize]="config.pageLinkSize || defaultPageLinkSize"
+    [rows]="config.rowsDefault" [showCurrentPageReport]="true" [rowsPerPageOptions]="config.rowsPerPage"
+    [paginator]="(hasPagination && typePagination === 'client')" [loading]="config.loading" dataKey="id"
+    [sortMode]="(config.sortable)? 'multiple': null" [scrollable]="(config.scrollable)? config.scrollable: false"
+    [scrollHeight]="config.scrollHeight" [customSort]="(config.sortable)? true:false"
+    [lazy]="(typePagination === 'client')? false: true" (onSort)="customSort($event)" [columns]="config.headers"
+    [frozenColumns]="(config.frozenHeaders)? config.frozenHeaders:null"
+    [frozenWidth]="(config.frozenWidth)? config.frozenWidth: null" [currentPageReportTemplate]="getTemplate()">
+    <ng-template pTemplate="colgroup" let-columns>
+      <colgroup>
+        <col *ngFor="let col of columns" [style]="'width:' + col.width">
+      </colgroup>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <ng-container *ngFor="let col of columns">
+          <th *ngIf="col.visible" [ngClass]="col.extraClass" [pSortableColumn]="col.id" id="head_{{ col.id }}"
+            [style]="'width:' + col.width">
+            {{ col.label | translate }}
+            <p-sortIcon *ngIf="config.sortable && col.sortable" [field]="col.id"
+              ariaLabel="{{ 'GENERICS.activeSort' | translate}}" ariaLabelDesc="{{ 'GENERICS.activeSort' | translate}}"
+              ariaLabelAsc="{{ 'GENERICS.activeSort' | translate}}"></p-sortIcon>
+          </th>
+        </ng-container>
+        <th *ngIf="config.hasDetail || (config.colActions !== undefined && config.colActions.length > 0)" id="actions"
+          class="p-column-title">
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-model let-columns="columns" let-ri="rowIndex">
+      <tr [ngClass]="(model && model.hasErrors)? 'error': ''" (click)="onElementSelect(model, fileReference)">
+        <ng-container *ngFor="let col of columns">
+          <td *ngIf="col.visible"
+            [pTooltip]="(col.tooltip !== undefined && col.tooltip !== null && col.tooltip === true && col.type !== 'chip')? utils.parseCell(col, model | composeObject:col.id, true): ''"
+            [tooltipPosition]="(col.tooltipPosition !== undefined && col.tooltipPosition !== null)? col.tooltipPosition: ''"
+            [escape]="(col.tooltipEscape !== undefined && col.tooltipEscape !== null)? col.tooltipEscape: true"
+            [tooltipStyleClass]="(col.tooltipStyleClass !== undefined && col.tooltipStyleClass !== null)? col.tooltipStyleClass: ''"
+            [ngClass]="col.extraClass" [style]="'width:' + col.width">
+            <ng-container *ngIf="col.type == 'order'">
+              {{ ri + 1 }}
+            </ng-container>
+
+            <ng-container
+              *ngIf="(col.type !== 'button' && col.type !== 'checkbox' && col.type !== 'switch') && col.type === 'string' || col.type === 'date' || col.type === 'boolean' ">
+              {{ utils.parseCell(col, model | composeObject:col.id, false) }}
+            </ng-container>
+
+            <ng-container *ngIf="col.type === 'checkbox'">
+              <p-checkbox></p-checkbox>
+            </ng-container>
+
+            <ng-container *ngIf="col.type === 'switch'">
+              <ng-container *ngIf="col.action === undefined || col.action === null">
+                <p-inputSwitch [disabled]="true" [ngModel]="model[col.id]"></p-inputSwitch>
+              </ng-container>
+              <ng-container *ngIf="col.action !== undefined && col.action !== null">
+                <p-inputSwitch (onChange)="col.action(model)" [ngModel]="model[col.id]"></p-inputSwitch>
+              </ng-container>
+            </ng-container>
+
+            <!-- SPECIFIC FOR MASTER DATA LIST TABLE -->
+            <ng-container *ngIf="config.name === 'registersMasterData' || config.name === 'portConfigTable'">
+              <ng-container *ngIf="col.type === 'button' && col.id === 'status'">
+                <!-- boton Activar -->
+                <ng-container *ngIf="(model | composeObject:col.id) === false">
+                  <p-button (click)="col.action(model)" label="{{ 'VESSEL.buttonActive' | translate }}"
+                    styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+
+                <!-- boton Desactivar -->
+                <ng-container *ngIf="(model | composeObject:col.id) === true">
+                  <p-button (click)="col.action(model)" label="{{ 'VESSEL.buttonDesactive' | translate }}"
+                    styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR MASTER DATA LIST TABLE -->
+
+            <!-- SPECIFIC FOR TUPAs LIST TABLE -->
+            <ng-container *ngIf="config.name === 'tupasList'">
+              <ng-container
+                *ngIf="col.type === 'button' && col.id === 'status' && col.hasPermission !== undefined && col.hasPermission === true">
+                <!-- TUPAs boton Activar -->
+                <ng-container *ngIf="(model | composeObject:col.id) ==='TUPA_INACTIVE'">
+                  <p-button (click)="col.action(model)" label="{{ 'VESSEL.buttonActive' | translate }}"
+                    styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+
+                <!-- TUPAs boton Desactivar -->
+                <ng-container *ngIf="(model | composeObject:col.id) ==='TUPA_ACTIVE'">
+                  <p-button (click)="col.action(model)" label="{{ 'VESSEL.buttonDesactive' | translate }}"
+                    styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+
+            <!-- SPECIFIC FOR PROCEDURE LIST TABLE -->
+            <ng-container *ngIf="config.name === 'procedureList'">
+              <ng-container *ngIf="col.type === 'chip'">
+                <ng-container *ngIf="(model | composeObject:col.id) === null">
+                  -
+                </ng-container>
+                <ng-container *ngIf="(model | composeObject:col.id) !== null">
+                  <div class="status-chip status-{{ model | composeObject:col.id }}">
+                    <span class="icon pi pi-arrow-circle-right"></span>
+                    <span class="status">{{ 'GENERICS.' + (model | composeObject:col.id) | translate}}</span>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR PROCEDURE LIST TABLE -->
+
+            <!-- SPECIFIC FOR VESSEL LIST TABLE -->
+            <ng-container *ngIf="config.name === 'vessels'">
+              <ng-container *ngIf="col.type === 'chip' && col.id === 'status'">
+                <ng-container *ngIf="(model | composeObject:col.id) === 'VESSEL_STATUS_ACTIVE'">
+                  <div class="status-chip status-AC">
+                    <span class="icon pi pi-arrow-circle-right"></span>
+                    <span class="status">{{ 'GENERICS.active' | translate}}</span>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="(model | composeObject:col.id) === 'VESSEL_STATUS_VERIFIED'">
+                  <div class="status-chip status-VER">
+                    <span class="icon pi pi-check-circle"></span>
+                    <span class="status">{{ 'GENERICS.verified' | translate}}</span>
+                  </div>
+                </ng-container>
+                <!-- Estado inactivo de VesselList -->
+                <ng-container *ngIf="(model | composeObject:col.id) === 'VESSEL_STATUS_INACTIVE'">
+                  <div class="status-chip status-INAC">
+                    <span class="icon ux-ui ux-ui-status-inactive"></span>
+                    <span class="status">{{ 'GENERICS.inactive' | translate}}</span>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container
+                *ngIf="col.type === 'button' && col.id === 'status' && col.hasPermission !== undefined && col.hasPermission === true">
+                <ng-container
+                  *ngIf="(model | composeObject:col.id) === 'VESSEL_STATUS_ACTIVE' || (model | composeObject:col.id) === 'VESSEL_STATUS_VERIFIED'">
+                  <p-button *ngIf="permissions.indexOf('USER#Autority') == -1" (click)="col.action(model)"
+                    label="{{ 'VESSEL.buttonDesactive' | translate }}" styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+                <!-- Botón inactivo de VesselList -->
+                <ng-container *ngIf="(model | composeObject:col.id) ==='VESSEL_STATUS_INACTIVE'">
+                  <p-button *ngIf="permissions.indexOf('USER#Autority') == -1" (click)="col.action(model)"
+                    label="{{ 'VESSEL.buttonActive' | translate }}" styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+                <!-- Botón verificado de VesselList -->
+                <ng-container *ngIf="(model | composeObject:col.id) ==='VESSEL_STATUS_VERIFIED'">
+                  <p-button *ngIf="permissions.indexOf('USER#Autority') != -1" (click)="col.action(model)"
+                    label="{{ 'VESSEL.check' | translate }}" styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR VESSEL LIST TABLE -->
+
+            <!-- SPECIFIC FOR DUE LIST TABLE -->
+            <ng-container *ngIf="config.name === 'due'">
+              <ng-container *ngIf="col.type === 'chip' && col.id === 'status'">
+                <ng-container>
+                  <div class="status-chip status-{{ model | composeObject:col.id }}">
+                    <span class="icon pi pi-arrow-circle-right"></span>
+                    <span class="status">{{ 'GENERICS.' + (model | composeObject:col.id) | translate}}</span>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR DUE LIST TABLE -->
+
+            <!-- SPECIFIC FOR DUE SERVICE LIST TABLE -->
+            <ng-container *ngIf="config.name === 'serviceDetail'">
+              <ng-container *ngIf="col.type === 'chip' && col.id === 'status'">
+                <ng-container>
+                  <div class="status-chip status-{{ model | composeObject:col.id }}">
+                    <span class="icon pi pi-arrow-circle-right"></span>
+                    <span class="status">{{ 'GENERICS.' + (model | composeObject:col.id) | translate}}</span>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR DUE SERVICE LIST TABLE -->
+
+            <!-- SPECIFIC FOR USER TASK TABLE -->
+            <ng-container *ngIf="config.name === 'userTask'">
+              <ng-container *ngIf="col.type === 'chip' && col.id === 'status'">
+                <!-- Estado activo de UserTask -->
+                <ng-container *ngIf="(model | composeObject:col.id) === 'NOTIFICATION_USER_STATUS_ACTIVE'">
+                  <div
+                    [pTooltip]="(col.tooltip !== undefined && col.tooltip !== null && col.tooltip === true)? ('GENERICS.active' | translate): ''"
+                    class="status-user task-status-AC">
+                    <span class="icon pi"></span>
+                    <!-- <span class="status">{{ 'GENERICS.active' | translate}}</span> -->
+                  </div>
+                </ng-container>
+                <!-- Estado resuelto de UserTask -->
+                <ng-container *ngIf="(model | composeObject:col.id) === 'NOTIFICATION_USER_STATUS_RESOLVED'">
+                  <div
+                    [pTooltip]="(col.tooltip !== undefined && col.tooltip !== null && col.tooltip === true)? ('GENERICS.resolved' | translate): ''"
+                    class="status-user task-status-RES">
+                    <span class="icon ux-ui"></span>
+                    <!-- <span class="status">{{ 'GENERICS.inactive' | translate}}</span> -->
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="col.type === 'button' && col.id === 'status'">
+                <!-- Botón resuelto de UserTask -->
+                <ng-container *ngIf="(model | composeObject:col.id) ==='NOTIFICATION_USER_STATUS_ACTIVE'">
+                  <p-button (click)="col.action(model)" label="{{ 'USER.taskNotifications.resolve' | translate }}"
+                    styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR USER TASK TABLE -->
+
+            <!-- SPECIFIC FOR USER NOTIFICATIONS TABLE -->
+            <ng-container *ngIf="config.name === 'userNotification'">
+              <ng-container *ngIf="col.type === 'chip' && col.id === 'status'">
+                <!-- Estado activo de UserNotification -->
+                <ng-container *ngIf="(model | composeObject:col.id) === 'NOTIFICATION_USER_STATUS_ACTIVE'">
+                  <div
+                    [pTooltip]="(col.tooltip !== undefined && col.tooltip !== null && col.tooltip === true)? ('GENERICS.active' | translate): ''"
+                    class="status-user notification-status-AC">
+                    <span class="icon pi"></span>
+                    <!-- <span class="status">{{ 'GENERICS.active' | translate}}</span> -->
+                  </div>
+                </ng-container>
+                <!-- Estado resuelto de UserNotification -->
+                <ng-container *ngIf="(model | composeObject:col.id) === 'NOTIFICATION_USER_STATUS_ARCHIVED'">
+                  <div
+                    [pTooltip]="(col.tooltip !== undefined && col.tooltip !== null && col.tooltip === true)? ('GENERICS.archived' | translate): ''"
+                    class="status-user notification-status-INAC">
+                    <span class="icon ux-ui"></span>
+                    <!-- <span class="status">{{ 'GENERICS.inactive' | translate}}</span> -->
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="col.type === 'button' && col.id === 'status'">
+                <!-- Botón resuelto de UserNotification -->
+                <ng-container *ngIf="(model | composeObject:col.id) ==='NOTIFICATION_USER_STATUS_ACTIVE'">
+                  <p-button (click)="col.action(model)" label="{{ 'USER.taskNotifications.archive' | translate }}"
+                    styleClass="{{ col.buttonClass }}"></p-button>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR USER NOTIFICATIONS TABLE -->
+
+            <!-- SPECIFIC FOR PASSENGERS/CREW LIST TABLE -->
+            <ng-container *ngIf="config.name === 'passengerList' || config.name === 'crewList' || config.name === 'stowawayList'">
+              <ng-container *ngIf="col.type === 'chip' && col.id === 'status'">
+                <ng-container *ngIf="(model | composeObject:col.id) === 'PASSENGER_CREW_STATUS_ACTIVE'">
+                  <div class="status-chip status-STATUS_ACTIVE">
+                    <span class="icon pi pi-arrow-circle-right"></span>
+                    <span class="status">{{ 'GENERICS.STATUS_ACTIVE' | translate}}</span>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="(model | composeObject:col.id) === 'PASSENGER_CREW_STATUS_CANCELED'">
+                  <div class="status-chip status-STATUS_CANCELED">
+                    <span class="icon pi pi-arrow-circle"></span>
+                    <span class="status">{{ 'GENERICS.STATUS_CANCELED' | translate}}</span>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="(model | composeObject:col.id) ==='PASSENGER_CREW_STATUS_PROVISIONAL'">
+                  <div class="status-chip status-STATUS_PROVISIONAL">
+                    <span class="icon pi ux-ui-status-inactive"></span>
+                    <span class="status">{{ 'GENERICS.STATUS_PROVISIONAL' | translate}}</span>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            <!-- SPECIFIC FOR USER NOTIFICATIONS TABLE -->
+
+
+          </td>
+        </ng-container>
+        <td *ngIf="(config.colActions !== undefined && config.colActions.length > 0) || config.hasDetail === true"
+          class="actions">
+          <span *ngIf="config.hasDetail" [pRowToggler]="model" class="pi pi-eye"
+            pTooltip="{{ 'GENERICS.viewMore' | translate }}"></span>
+          <span *ngFor="let item of config.colActions" class="{{ item.icon }}"
+            [pTooltip]="(item.tooltip !== undefined && item.tooltip !== null)? [item.tooltip | translate]: ''"
+            (click)="item.action($event, model, fileReference)"></span>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template *ngIf="config.hasDetail && detailTemplate !== null" pTemplate="rowexpansion" let-model
+      let-columns="columns">
+      <tr>
+        <td [attr.colspan]="config.headers.length + 1">
+          <ng-container *ngTemplateOutlet="detailTemplate; context: { model: model}"></ng-container>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-paginator #tablePaginator [hidden]="!hasPagination || typePagination !== 'server'" [first]="first"
+    [pageLinkSize]="config.pageLinkSize || defaultPageLinkSize" [rows]="config.rowsDefault"
+    (onPageChange)="config.paginateAction($event)" [totalRecords]="totalRecords" [showCurrentPageReport]="true"
+    [currentPageReportTemplate]="getTemplate()" [rowsPerPageOptions]="config.rowsPerPage">
+  </p-paginator>
+</div>

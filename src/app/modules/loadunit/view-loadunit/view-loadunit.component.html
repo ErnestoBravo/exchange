@@ -1,0 +1,212 @@
+<div class="operation-form">
+    <div class="p-d-flex">
+        <!-- <div class="p-grid"> -->
+        <form class="p-col-12" [formGroup]="form">
+            <p>Mantenedor De Cargas: Agregar</p>
+            <div class="p-grid">
+                <div class="p-col-3">
+                    <input type="text" formControlName="operacion" placeholder="N° Operación Asociada">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="tipoOperacion" placeholder="Tipo de Operación">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="tipoExpedicion" placeholder="Tipo de Expedición">
+                </div>
+              </div>
+
+              <p-accordion>
+                <p-accordionTab header="Información de la Operación / Nave">
+                    <div class="p-grid">
+                        <div class="p-col-3">
+                            <p-calendar inputId="startDate" formControlName="startDate" placeholder="Fecha ETA"
+                                [readonlyInput]="true">
+                            </p-calendar>
+                        </div>
+                        <div class="p-col-3">
+                            <p-calendar inputId="endDate" formControlName="endDate" placeholder="Fecha ETD"
+                                [readonlyInput]="true">
+                            </p-calendar>
+                        </div>
+                        <div class="p-col-3">
+                            <p-inputNumber formControlName="terminalId" placeholder="Fecha de Citación de Carga"></p-inputNumber>
+                        </div>
+                    </div>
+                    <div class="p-grid">
+                        <div class="p-col-3">
+                            <p-calendar inputId="startDate" formControlName="startDate" placeholder="Número y Descripción de Operación"
+                                [readonlyInput]="true">
+                            </p-calendar>
+                        </div>
+                        <div class="p-col-3">
+                            <p-calendar inputId="endDate" formControlName="endDate" placeholder="Viaje de la Nave"
+                                [readonlyInput]="true">
+                            </p-calendar>
+                        </div>
+                        <div class="p-col-3">
+                            <p-inputNumber formControlName="terminalId" placeholder="Terminal"></p-inputNumber>
+                        </div>
+                    </div>
+                    <p-accordion>
+                        <p-accordionTab header="Unidad de Carga">
+                            <div class="p-grid">
+                                <div class="p-col-3">
+                                    <p-calendar inputId="startDate" formControlName="startDate" placeholder="Tipo de Carga"
+                                        [readonlyInput]="true">
+                                    </p-calendar>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-calendar inputId="endDate" formControlName="endDate" placeholder="Agente de Carga"
+                                        [readonlyInput]="true">
+                                    </p-calendar>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-inputNumber formControlName="terminalId" placeholder="Condicion Especial"></p-inputNumber>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-inputNumber formControlName="rotationNumber" placeholder="Fecha SGA">
+                                    </p-inputNumber>
+                                </div>
+                               </div>
+                            <div class="p-grid">
+                                <div class="p-col-3">
+                                    <p-calendar inputId="startDate" formControlName="startDate" placeholder="Nº Contenedor"
+                                        [readonlyInput]="true">
+                                    </p-calendar>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-calendar inputId="endDate" formControlName="endDate" placeholder="Dueño de Carga"
+                                        [readonlyInput]="true">
+                                    </p-calendar>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-inputNumber formControlName="terminalId" placeholder="Fecha de Embarque"></p-inputNumber>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-inputNumber formControlName="rotationNumber" placeholder="Apertura de Stacking">
+                                    </p-inputNumber>
+                                </div>
+                            </div>
+                            <div class="p-grid">
+                                <div class="p-col-3">
+                                    <p-calendar inputId="startDate" formControlName="startDate" placeholder="Nº Booking"
+                                        [readonlyInput]="true">
+                                    </p-calendar>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-calendar inputId="endDate" formControlName="endDate" placeholder="Almacenista"
+                                        [readonlyInput]="true">
+                                    </p-calendar>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-inputNumber formControlName="terminalId" placeholder="Fecha Anexo Pallet"></p-inputNumber>
+                                </div>
+                                <div class="p-col-3">
+                                    <p-inputNumber formControlName="rotationNumber" placeholder="Cierre de Stacking">
+                                    </p-inputNumber>
+                                </div>
+                            </div>
+                        </p-accordionTab>
+                    </p-accordion>
+                </p-accordionTab>
+            </p-accordion>
+
+            <p-accordion>
+                <p-accordionTab header="Información de Permiso y Vigencias">
+                    <div class="p-grid">
+                        <div class="p-col-3">
+                            <p-card header="Conductor" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+                                <ng-template pTemplate="header">
+                                    <img alt="Card" src="assets/showcase/images/usercard.png">
+                                </ng-template>
+                                <p>
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="Nombre">
+                                    <input type="text" [style]="{'width': '33%'}"formControlName="operacion" placeholder="RUT">
+                                    <input type="text" [style]="{'width': '33%'}"formControlName="operacion" placeholder="Celular">
+                                    <input type="text" [style]="{'width': '33%'}"formControlName="operacion" placeholder="Vigencia">
+                                </p>
+                            </p-card>
+                        </div>
+                        <div class="p-col-3">
+                            <p-card header="Camion" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+                                <ng-template pTemplate="header">
+                                    <img alt="Card" src="assets/showcase/images/usercard.png">
+                                </ng-template>
+                                <p>
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="País">
+                                    <input type="text" formControlName="operacion" placeholder="Patente">
+                                    <input type="text" formControlName="operacion" placeholder="Vigencia">
+                                </p>
+                            </p-card>
+                        </div>
+                    </div>
+                </p-accordionTab>
+            </p-accordion>
+
+            <p-accordion>
+                <p-accordionTab header="Expedición Logística">
+                    <div class="p-grid">
+                        <div class="p-col-3">
+                            <p-card header="ZEAL" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+                                <ng-template pTemplate="header">
+                                    <img alt="Card" src="assets/showcase/images/usercard.png">
+                                </ng-template>
+                                <p>
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Disponible Bajada">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Solicitud Terminal / Terminal que solicita">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Aprobación Bajada">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Salida ZEAL">
+                                </p>
+                            </p-card>
+                        </div>
+                        <div class="p-col-3">
+                            <p-card header="Ruta Bajada" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+                                <ng-template pTemplate="header">
+                                    <img alt="Card" src="assets/showcase/images/usercard.png">
+                                </ng-template>
+                                <p>
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Ruta Bajada 1">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Ruta Bajada 2">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Ruta Bajada 3">
+                                </p>
+                            </p-card>
+                        </div><div class="p-col-3">
+                            <p-card header="Terminal" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+                                <ng-template pTemplate="header">
+                                    <img alt="Card" src="assets/showcase/images/usercard.png">
+                                </ng-template>
+                                <p>
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="Nombre">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="RUT">
+                                </p>
+                            </p-card>
+                        </div>
+                        <div class="p-col-3">
+                            <p-card header="Ruta Subida" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+                                <ng-template pTemplate="header">
+                                    <img alt="Card" src="assets/showcase/images/usercard.png">
+                                </ng-template>
+                                <p>
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Ruta Subida 1">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Ruta Subida 2">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Ruta Subida 3">
+                                    <input type="text" [style]="{'width': '100%'}" formControlName="operacion" placeholder="F/H Ruta Subida 4">
+                                </p>
+                            </p-card>
+                        </div>
+                    </div>
+                </p-accordionTab>
+            </p-accordion>
+           
+            <br>
+            <div class="p-grid">
+                <div class="p-col-2 p-offset-7 p-text-right">
+                    <p-button label="Back" (onClick)="back()"></p-button>
+                </div>
+            </div>
+          
+        </form>
+        <!-- </div> -->
+    </div>
+
+</div>

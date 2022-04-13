@@ -1,0 +1,37 @@
+<movarq-auth *ngIf="!isLogged && auth_config" [config]="auth_config" showLiteral=false></movarq-auth>
+<div *ngIf=isLogged class="mova-quickstart">
+  <movarq-topbar2 class="mova-quickstart__topbar2" datetimeAlign="left" [hideDate]="false">
+    <h1 class="ui-logo"><span>EXCHANGE</span></h1>
+    <div class="ux-ui-top-bar">
+      <ul>
+        <li>
+          <span pTooltip="{{ 'USER.taskNotifications.notifications' | translate }}"
+            routerLink="/user/tasks-notifications" class="pi pi-bell"></span>
+          <span *ngIf="notifications > 0" class="bubble notifications">+{{ notifications }}</span>
+        </li>
+        <li><span pTooltip="{{ 'MENU.USER.ElectronicMailBox' | translate }}" routerLink="/user/mailbox"
+            class="pi pi-envelope"></span></li>
+      </ul>
+    </div>
+  </movarq-topbar2>
+  <div #container class="mova-quickstart__container" (click)="closeSubMenu()">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+<!-- Dialog confirm -->
+<p-confirmDialog key="first" [closable]="true" icon="pi pi-exclamation-circle"
+  [styleClass]="extraClasses + utils.extraClasses" [style]="{ width: '500px' }" [baseZIndex]="10000"></p-confirmDialog>
+
+<p-confirmDialog key="second" [closable]="true" icon="pi pi-exclamation-circle"
+  [styleClass]="extraClasses + utils.extraClasses" [style]="{ width: '500px' }" [baseZIndex]="10000"></p-confirmDialog>
+
+<div [style]="(utils.isLoading)? 'display: table': 'display: none'" class="ux-ui-loading-modal">
+  <div class="middle">
+    <div class="loading-container ui-corner-all">
+      <span class="pi pi-spin pi-spinner"></span>
+      <p>{{ 'GENERICS.loading' | translate }}</p>
+    </div>
+  </div>
+</div>

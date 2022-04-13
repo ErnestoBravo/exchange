@@ -1,0 +1,206 @@
+# Default values for shift2rail-security-module.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+# helm install shopping-fertagus -f ./aks-values-yaml/shopping-fertagus.yaml --namespace=shift2rail .
+# helm template -f ./aks-values-yaml/shopping-fertagus.yaml .
+# helm delete shopping-fertagus --namespace=shift2rail
+global:
+  k8sContext: rke-mova
+  vertical: ope
+  solucion: pue
+  componente: vuc
+  environment: qa
+  t: i
+  owner: scaamano
+  deployer: scaamano
+  projectId:
+  clusterId:
+
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  repository: artifactory.mova.indra.es/docker-opepue/popepuevuc/silogport-hmi
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "develop"
+imagePullSecrets:
+  - name: regcred
+
+replicaCount: 1
+autoscaling:
+  enabled: false
+  minReplicas: 4
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+updateStrategy:
+  #  type: Recreate
+  # Kubernetes default value: RollingUpdate and 25% pods not available at a time
+  #  type: RollingUpdate
+  # Example 1:
+  #  type: Recreate
+  # Example 2:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 2        # how many extra pods we can add at a time
+    maxUnavailable: 0  # how many pods can be unavailable
+
+
+persistence:
+  enabled: false
+
+extraVolumeMounts:
+extraVolumes:
+
+service:
+  type: ClusterIP
+  serviceName: ""
+  ports:
+    - name: http
+      port: &service_port 80
+      protocol: TCP
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "360"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "360"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "360"
+    nginx.ingress.kubernetes.io/proxy-body-size: "250m"
+    nginx.ingress.kubernetes.io/client-body-buffer-size: "250m"
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  ingressName: ""
+  hosts:
+    - name: ""
+      domain: apps.k8s.mova.indra.es
+      path: /
+      serviceName: ""
+      servicePort: ""
+      secretName: "" # only applies if ingress.tls: enabled
+  tls:
+    enabled: false
+
+
+# Liveness probe configuration
+livenessProbe:
+  enabled: false
+  httpGet:
+    path: /actuator/health
+    port: *service_port
+  initialDelaySeconds: 60
+  periodSeconds: 10
+  timeoutSeconds: 3
+  successThreshold: 1
+  failureThreshold:  5
+# Readiness probe configuration
+readinessProbe:
+  enabled: false
+  httpGet:
+    path: /actuator/health
+    port: *service_port
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 3
+  successThreshold: 1
+  failureThreshold:  5
+
+initContainers:
+
+
+
+
+# Note:
+# - You can use existing ConfigMaps if "existing" value list is not empty
+# - and/or create a new one with values on data if "create" value is true
+configMaps:
+  existing: [opepuevuc-qa-urls-from-hmi]
+  create:
+    enabled: false
+    data:
+
+# Note:
+# - You can use existing Secrets if "existing" value list is not empty
+# - and/or create a new one with values on data if "create" value is true
+secrets:
+  existing: []
+  create:
+    enabled: false
+    data:
+
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 768Mi
+  requests:
+    cpu: 150m
+    memory: 256Mi
+
+
+# A ConfigMap and a Volume will be created
+serverFile:
+  existing:
+    enabled: false
+  create:
+    enabled: false
+
+
+configmapReload:
+  ## If false, the configmap-reload container will not be deployed
+  ##
+  enabled: false
+
+
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+# fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
+
+
+
+# DEPENDENCIES
+dependencies:
+  postgresql:
+    enabled: false
+  keycloak:
+    enabled: false
+  redis:
+    enabled: false
+  artemis:
+    enabled: false
+  shift2rail-operator-module:
+    enabled: false
+
+
+
+
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+
+

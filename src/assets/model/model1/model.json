@@ -1,0 +1,978 @@
+{
+	"anomaly_seed": "2c249dda00fbf54ab4cdd850532a584f286af5b6",
+	"category": 0,
+	"code": 200,
+	"columns": 4,
+	"configuration": null,
+	"configuration_status": false,
+	"constraints": false,
+	"created": "2021-04-14T14:32:30.989000",
+	"creator": "jhipolito",
+	"credits": 0.0,
+	"credits_per_prediction": 0.0,
+	"dataset": "dataset/6076f723e4279b13af004060",
+	"dataset_field_types": {
+		"categorical": 1,
+		"datetime": 1,
+		"items": 0,
+		"numeric": 11,
+		"preferred": 10,
+		"text": 0,
+		"total": 13
+	},
+	"dataset_status": true,
+	"description": "Proyecto que contiene las anomalías provenientes del análisis y generación de modelos de detección de anomalías. \n\nPor restricciones del modelo, son análisis mono-variables de sólo 4 variables (las que tienen datos y son significativos):\n - Nivel Combustible\n - % Torque (par) Motor\n - Revoluciones Motor\n - Temperatura Refrigerante Motor",
+	"excluded_fields": [
+		"000000",
+		"000000-0",
+		"000000-1",
+		"000005",
+		"000000-6",
+		"000000-5",
+		"000000-4",
+		"000000-3",
+		"000000-2"
+	],
+	"fields_meta": {
+		"count": 4,
+		"limit": -1,
+		"offset": 0,
+		"query_total": 4,
+		"total": 4
+	},
+	"forest_size": 128,
+	"id_fields": [],
+	"input_fields": [
+		"000001",
+		"000002",
+		"000003",
+		"000004"
+	],
+	"learning_rate": null,
+	"locale": "es-es",
+	"max_columns": 13,
+	"max_rows": 727,
+	"model": {
+		"constraints": false,
+		"fields": {
+			"000001": {
+				"column_number": 1,
+				"datatype": "int16",
+				"name": "VALOR_1_PAR_MOTOR",
+				"optype": "numeric",
+				"order": 0,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							0,
+							41
+						],
+						[
+							5.33333,
+							3
+						],
+						[
+							9.28571,
+							7
+						],
+						[
+							11.76667,
+							60
+						],
+						[
+							13.44118,
+							170
+						],
+						[
+							15.5283,
+							159
+						],
+						[
+							17.4188,
+							117
+						],
+						[
+							19.32,
+							50
+						],
+						[
+							21.58333,
+							12
+						],
+						[
+							24.06667,
+							15
+						],
+						[
+							26.66667,
+							6
+						],
+						[
+							28.36364,
+							11
+						],
+						[
+							30,
+							7
+						],
+						[
+							31.9,
+							10
+						],
+						[
+							34.8,
+							5
+						],
+						[
+							36.6,
+							5
+						],
+						[
+							38.4,
+							5
+						],
+						[
+							40.33333,
+							3
+						],
+						[
+							43.28571,
+							7
+						],
+						[
+							46.66667,
+							3
+						],
+						[
+							49.4,
+							5
+						],
+						[
+							52.125,
+							8
+						],
+						[
+							54.66667,
+							3
+						],
+						[
+							56.66667,
+							3
+						],
+						[
+							58.33333,
+							3
+						],
+						[
+							61,
+							1
+						],
+						[
+							65,
+							1
+						],
+						[
+							78,
+							1
+						],
+						[
+							80,
+							1
+						],
+						[
+							86,
+							1
+						],
+						[
+							92,
+							1
+						],
+						[
+							130,
+							3
+						]
+					],
+					"exact_histogram": {
+						"open_max": 3,
+						"populations": [
+							41,
+							7,
+							233,
+							310,
+							40,
+							20,
+							18,
+							14,
+							10,
+							6,
+							11,
+							8,
+							1,
+							1,
+							0,
+							1,
+							1,
+							1,
+							1
+						],
+						"start": 0,
+						"width": 5
+					},
+					"kurtosis": 23.9784,
+					"maximum": 130,
+					"mean": 18.29986,
+					"median": 16,
+					"minimum": 0,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": 3.8885,
+					"standard_deviation": 13.23535,
+					"sum": 13304,
+					"sum_squares": 370638,
+					"variance": 175.17442
+				}
+			},
+			"000002": {
+				"column_number": 2,
+				"datatype": "int16",
+				"name": "VALOR_1_REVOLUCIONES",
+				"optype": "numeric",
+				"order": 1,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							0,
+							4
+						],
+						[
+							706.33333,
+							3
+						],
+						[
+							804.05926,
+							270
+						],
+						[
+							866.10236,
+							127
+						],
+						[
+							919.7644,
+							191
+						],
+						[
+							1021,
+							6
+						],
+						[
+							1115.75,
+							4
+						],
+						[
+							1176.66667,
+							3
+						],
+						[
+							1261.33333,
+							6
+						],
+						[
+							1343.2,
+							5
+						],
+						[
+							1401.2,
+							5
+						],
+						[
+							1477,
+							6
+						],
+						[
+							1584.11111,
+							9
+						],
+						[
+							1694.875,
+							8
+						],
+						[
+							1766.66667,
+							9
+						],
+						[
+							1831.66667,
+							3
+						],
+						[
+							1898.33333,
+							6
+						],
+						[
+							1945.33333,
+							3
+						],
+						[
+							2018.2,
+							5
+						],
+						[
+							2126.7,
+							10
+						],
+						[
+							2184,
+							1
+						],
+						[
+							2285.83333,
+							12
+						],
+						[
+							2352,
+							5
+						],
+						[
+							2416.8,
+							5
+						],
+						[
+							2509.85714,
+							7
+						],
+						[
+							2615,
+							2
+						],
+						[
+							2708.75,
+							4
+						],
+						[
+							2788,
+							1
+						],
+						[
+							2948,
+							1
+						],
+						[
+							3121,
+							1
+						],
+						[
+							3320,
+							1
+						],
+						[
+							8192,
+							4
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							4,
+							592,
+							33,
+							40,
+							39,
+							13,
+							2,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							4
+						],
+						"start": 0,
+						"width": 500
+					},
+					"kurtosis": 57.73874,
+					"maximum": 8192,
+					"mean": 1071.51032,
+					"median": 876,
+					"minimum": 0,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": 6.39744,
+					"standard_deviation": 698.9179799999999,
+					"sum": 778988,
+					"sum_squares": 1189334762,
+					"variance": 488486.34115
+				}
+			},
+			"000003": {
+				"column_number": 3,
+				"datatype": "int8",
+				"name": "VALOR_1_COMBUSTIBLE",
+				"optype": "numeric",
+				"order": 2,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							45,
+							2
+						],
+						[
+							47.4,
+							5
+						],
+						[
+							50.5,
+							2
+						],
+						[
+							52,
+							1
+						],
+						[
+							54.66667,
+							3
+						],
+						[
+							57.5,
+							2
+						],
+						[
+							60,
+							6
+						],
+						[
+							61,
+							1
+						],
+						[
+							62,
+							2
+						],
+						[
+							64.25,
+							4
+						],
+						[
+							68,
+							1
+						],
+						[
+							70.75,
+							4
+						],
+						[
+							72,
+							3
+						],
+						[
+							74.2,
+							5
+						],
+						[
+							76,
+							1
+						],
+						[
+							77.42857,
+							7
+						],
+						[
+							79.16667,
+							6
+						],
+						[
+							81.84615,
+							13
+						],
+						[
+							84.5,
+							16
+						],
+						[
+							86.34211,
+							38
+						],
+						[
+							88,
+							30
+						],
+						[
+							89,
+							19
+						],
+						[
+							90,
+							23
+						],
+						[
+							91,
+							31
+						],
+						[
+							92,
+							59
+						],
+						[
+							94,
+							51
+						],
+						[
+							95,
+							36
+						],
+						[
+							96,
+							62
+						],
+						[
+							97,
+							20
+						],
+						[
+							98,
+							49
+						],
+						[
+							99,
+							19
+						],
+						[
+							100,
+							206
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							2,
+							3,
+							2,
+							2,
+							1,
+							3,
+							1,
+							1,
+							7,
+							2,
+							4,
+							0,
+							1,
+							4,
+							3,
+							5,
+							5,
+							8,
+							3,
+							11,
+							16,
+							38,
+							49,
+							54,
+							59,
+							87,
+							82,
+							68,
+							206
+						],
+						"start": 44,
+						"width": 2
+					},
+					"kurtosis": 7.40669,
+					"maximum": 100,
+					"mean": 92.61073,
+					"median": 95,
+					"minimum": 45,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": -2.49281,
+					"standard_deviation": 9.65898,
+					"sum": 67328,
+					"sum_squares": 6303028,
+					"variance": 93.29592
+				}
+			},
+			"000004": {
+				"column_number": 4,
+				"datatype": "int8",
+				"name": "VALOR_1_REFRIGERANTE",
+				"optype": "numeric",
+				"order": 3,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							28,
+							1
+						],
+						[
+							30,
+							1
+						],
+						[
+							32,
+							1
+						],
+						[
+							33.71429,
+							7
+						],
+						[
+							35.55556,
+							9
+						],
+						[
+							38,
+							17
+						],
+						[
+							40.58824,
+							17
+						],
+						[
+							42.5,
+							36
+						],
+						[
+							45.02222,
+							45
+						],
+						[
+							47.53846,
+							26
+						],
+						[
+							49.89744,
+							39
+						],
+						[
+							52.42424,
+							33
+						],
+						[
+							54.56,
+							25
+						],
+						[
+							56.48387,
+							31
+						],
+						[
+							58.34783,
+							23
+						],
+						[
+							60.70588,
+							17
+						],
+						[
+							62.61111,
+							18
+						],
+						[
+							64.59375,
+							32
+						],
+						[
+							66.48,
+							25
+						],
+						[
+							68.3125,
+							16
+						],
+						[
+							70.5,
+							18
+						],
+						[
+							72.4,
+							15
+						],
+						[
+							74.5,
+							32
+						],
+						[
+							76.5102,
+							49
+						],
+						[
+							78.43103,
+							58
+						],
+						[
+							80.4375,
+							16
+						],
+						[
+							82,
+							4
+						],
+						[
+							83.5,
+							12
+						],
+						[
+							85.59259,
+							27
+						],
+						[
+							87.55814,
+							43
+						],
+						[
+							89.39394,
+							33
+						],
+						[
+							92,
+							1
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							1,
+							9,
+							26,
+							67,
+							71,
+							69,
+							68,
+							48,
+							60,
+							49,
+							123,
+							32,
+							90,
+							14
+						],
+						"start": 25,
+						"width": 5
+					},
+					"kurtosis": -1.21569,
+					"maximum": 92,
+					"mean": 64.18157,
+					"median": 65,
+					"minimum": 28,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": -0.0722,
+					"standard_deviation": 16.15353,
+					"sum": 46660,
+					"sum_squares": 3184152,
+					"variance": 260.93668
+				}
+			}
+		},
+		"forest_size": 128,
+		"kind": "iforest",
+		"mean_depth": 16.27166348253275,
+		"normalize_repeats": false,
+		"sample_size": 458,
+		"seed": "2c249dda00fbf54ab4cdd850532a584f286af5b6",
+		"top_anomalies": [
+			{
+				"importance": [
+					0.36496,
+					0.43012,
+					0.08283,
+					0.12209
+				],
+				"row": [
+					130,
+					8192,
+					98,
+					42
+				],
+				"row_number": 274,
+				"score": 0.76731
+			},
+			{
+				"importance": [
+					0.35568,
+					0.442,
+					0.07799,
+					0.12432
+				],
+				"row": [
+					130,
+					8192,
+					94,
+					43
+				],
+				"row_number": 411,
+				"score": 0.76731
+			},
+			{
+				"importance": [
+					0.11676,
+					0.54006,
+					0.12431,
+					0.21887
+				],
+				"row": [
+					0,
+					8192,
+					98,
+					42
+				],
+				"row_number": 275,
+				"score": 0.70614
+			},
+			{
+				"importance": [
+					0.07404,
+					0.58851,
+					0.11879,
+					0.21866
+				],
+				"row": [
+					24,
+					8192,
+					94,
+					43
+				],
+				"row_number": 413,
+				"score": 0.68991
+			},
+			{
+				"importance": [
+					0.6184,
+					0.048280000000000006,
+					0.117,
+					0.21632
+				],
+				"row": [
+					130,
+					871,
+					94,
+					43
+				],
+				"row_number": 412,
+				"score": 0.66325
+			},
+			{
+				"importance": [
+					0.19909,
+					0.1127,
+					0.41767,
+					0.27054
+				],
+				"row": [
+					57,
+					2095,
+					48,
+					89
+				],
+				"row_number": 258,
+				"score": 0.65109
+			},
+			{
+				"importance": [
+					0.33258,
+					0.26682,
+					0.1237,
+					0.2769
+				],
+				"row": [
+					78,
+					3121,
+					100,
+					87
+				],
+				"row_number": 76,
+				"score": 0.62951
+			},
+			{
+				"importance": [
+					0.11417,
+					0.14663,
+					0.45307,
+					0.28613
+				],
+				"row": [
+					32,
+					2472,
+					47,
+					88
+				],
+				"row_number": 546,
+				"score": 0.62534
+			},
+			{
+				"importance": [
+					0.13066,
+					0.14883,
+					0.44601,
+					0.2745
+				],
+				"row": [
+					40,
+					2351,
+					50,
+					87
+				],
+				"row_number": 194,
+				"score": 0.62238
+			},
+			{
+				"importance": [
+					0.39748,
+					0.24337,
+					0.13356,
+					0.22559
+				],
+				"row": [
+					92,
+					2735,
+					100,
+					85
+				],
+				"row_number": 168,
+				"score": 0.62179
+			}
+		],
+		"top_n": 10
+	},
+	"name": "CAD_AVL_dataset",
+	"name_options": "top-n=10, 128-tree, no constraints",
+	"normalize_repeats": false,
+	"number_of_anomalyscores": 0,
+	"number_of_batchanomalyscores": 0,
+	"number_of_public_anomalyscores": 0,
+	"ordering": 0,
+	"out_of_bag": false,
+	"parent_anomaly": null,
+	"parent_anomaly_status": false,
+	"price": 0.0,
+	"private": true,
+	"project": "project/603413220d052e3ad2000b50",
+	"range": null,
+	"replacement": false,
+	"resource": "anomaly/6076fcfe7ca0e613b8000fb4",
+	"rows": 727,
+	"sample_rate": 1.0,
+	"sample_size": 458,
+	"shared": false,
+	"size": 33101,
+	"source": "source/6076f4a1e4279b13af004054",
+	"source_status": true,
+	"status": {
+		"code": 5,
+		"elapsed": 3508,
+		"message": "The anomaly has been created",
+		"progress": 1
+	},
+	"subscription": false,
+	"tags": [
+		"Masivo de Occidente"
+	],
+	"top_n": 10,
+	"type": 0,
+	"updated": "2021-04-14T14:32:40.176000",
+	"white_box": false
+}

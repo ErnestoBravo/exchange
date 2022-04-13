@@ -1,0 +1,89 @@
+.mova-quickstart {
+  width: 100vw;
+  // height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &__container {
+      flex: 1;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-left: 35px;
+      padding-right: 35px;
+      &-title {
+          align-self: center;
+          font-size: 40px;
+      }
+      &-body {
+          background-color: white;
+      }
+  }
+  &__bottombar {
+      height: 30px;
+      z-index: 9999;
+  }
+}
+
+.ux-ui-loading-modal {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.2);
+z-index: 10000;
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+
+  .loading-container {
+    width: 382px;
+    height: 240px;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-top: solid 2px var(--accent);
+
+    margin: auto;
+    text-align: center;
+
+    padding-top: 55px;
+
+    .pi-spinner {
+      font-size: 7em;
+      &:before {
+        color: var(--accent);
+      }
+    }
+  }
+}
+
+
+}
+
+
+/* MEDIA QUERIES MOBILE*/
+
+@media (max-width: 770px) {
+  .mova-quickstart {
+      &__container {
+          padding-left: 16px;
+          padding-right: 16px;
+      }
+  }
+
+  .ux-ui-loading-modal {
+    .middle {
+      .loading-container {
+        width: 80% !important;
+      }
+    }
+  }
+}
+
+
+/* MEDIA QUERIES MOBILE*/

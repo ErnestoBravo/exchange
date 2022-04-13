@@ -1,0 +1,5 @@
+def command(cfg)
+{
+    return("npm run copy-files && node-publish")
+}
+return this

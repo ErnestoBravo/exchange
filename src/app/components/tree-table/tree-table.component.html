@@ -1,0 +1,56 @@
+<div class="ux-ui-tree-table">
+  <p-treeTable [value]="model" [columns]="config.headers" [responsive]="itsResponsive"
+    [pageLinkSize]="config.pageLinkSize || defaultPageLinkSize" [rows]="config.rowsDefault"
+    [showCurrentPageReport]="true" [rowsPerPageOptions]="config.rowsPerPage"
+    [paginator]="(hasPagination && typePagination === 'client')" [loading]="config.loading" dataKey="id"
+    [sortMode]="(config.sortable)? 'multiple': null" [scrollable]="true" [customSort]="(config.sortable)? true:false"
+    [lazy]="(typePagination === 'client')? false: true" (onSort)="customSort($event)" [columns]="config.headers"
+    [frozenColumns]="(config.frozenHeaders)? config.frozenHeaders:null"
+    [frozenWidth]="(config.frozenWidth)? config.frozenWidth: null" [currentPageReportTemplate]="getTemplate()">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <ng-container *ngFor="let col of columns">
+          <th *ngIf="col.visible" [ngClass]="col.extraClass" id="head_{{ col.id }}" [style]="'width:' + col.width">
+            {{ col.label | translate }}
+          </th>
+        </ng-container>
+        <th *ngIf="config.colActions !== undefined && config.colActions.length > 0" id="actions" class="p-column-title">
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+      <tr [ngClass]="(rowData.hasChild === true)? 'kb-row':''" (click)="onElementSelect(model, fileReference)">
+        <ng-container *ngFor="let col of columns; let i = index">
+          <td *ngIf="col.visible" [ngClass]="col.extraClass" [style]="'width:' + col.width">
+            <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+
+            <ng-container
+              *ngIf="(col.type !== 'button' && col.type !== 'checkbox') && col.type === 'string' || col.type === 'date' ">
+              {{ utils.parseCell(col, rowData[col.id], false) }}
+            </ng-container>
+
+            <ng-container *ngIf="col.type === 'chip'">
+              <ng-container *ngIf="rowData[col.id] !== null">
+                <div class="status-chip status-{{ rowData[col.id] }}">
+                  <span class="icon pi pi-arrow-circle-right"></span>
+                  <span class="status">{{ 'GENERICS.' + rowData[col.id] | translate}}</span>
+                </div>
+              </ng-container>
+            </ng-container>
+          </td>
+        </ng-container>
+        <td *ngIf="(config.colActions !== undefined && config.colActions.length > 0) || config.hasDetail === true"
+          class="actions">
+          <span *ngFor="let item of config.colActions" class="{{ item.icon }}"
+            [pTooltip]="(item.tooltip !== undefined && item.tooltip !== null)? [item.tooltip | translate]: ''"
+            (click)="item.action($event, rowData, fileReference)"></span>
+        </td>
+      </tr>
+    </ng-template>
+  </p-treeTable>
+  <p-paginator #tablePaginator [hidden]="!hasPagination || typePagination !== 'server'" [first]="first"
+    [pageLinkSize]="config.pageLinkSize || defaultPageLinkSize" [rows]="config.rowsDefault"
+    (onPageChange)="config.paginateAction($event)" [totalRecords]="totalRecords" [showCurrentPageReport]="true"
+    [currentPageReportTemplate]="getTemplate()" [rowsPerPageOptions]="config.rowsPerPage">
+  </p-paginator>
+</div>

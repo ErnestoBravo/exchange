@@ -1,0 +1,47 @@
+[class*="ux-"] {
+  &:before {
+    font-family: 'ux-ui-icons', sans-serif;
+    font-size: 17px;
+    color: #404040;
+    display: block;
+    content: "\e903" !important;
+  }
+}
+
+
+.breadcrumb {
+  padding: 21px 0 21px 48px;
+  margin: 0;
+  background-color: #ede8ec;
+
+  li {
+    font-size: 14px;
+    color: rgba(23, 34, 39, 0.5);
+
+    display: inline-block;
+
+    .ux-ui-icon-breadcrumb {
+      &:before {
+        font-size: 16px;
+        content: "\e908" !important;
+        color: #4b1c44;
+      }
+    }
+  }
+
+  li:before {
+    content: "/";
+    margin-left: 8px;
+    margin-right: 4px;
+  }
+  li:first-of-type:before {
+    content: "";
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  li a {
+    text-decoration: underline;
+  }
+
+}

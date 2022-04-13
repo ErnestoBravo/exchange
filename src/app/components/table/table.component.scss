@@ -1,0 +1,146 @@
+body {
+    .ux-ui-table {
+        border: 1px solid #dfe3e6;
+        .table-list {
+            border: none;
+            color: var(--foreward-foreward-f-1);
+        }
+        th {
+            background-color: var(--background-background-b-2) !important;
+            width: 150px;
+            height: 40px;
+            padding: 12px;
+            border: none !important;
+        }
+        tr:nth-child(odd) {
+            background-color: var(--background-background-b-1);
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9 !important;
+        }
+        .ui-table {
+          .ui-table-tbody {
+            tr {
+              &.error {
+                background-color: #F9DDDC !important;
+              }
+
+              td {
+                &.breakSpaces {
+                  white-space: break-spaces;
+                }
+              }
+            }
+          }
+            .ui-table-tbody>tr:last-child {
+                border-bottom: none;
+            }
+            .ui-table-thead {
+                >tr {
+                    >th {
+                        text-transform: uppercase;
+
+                        &.ui-sortable-column {
+                          position: relative;
+                          padding-left: 25px;
+
+                          .ui-sortable-column-icon {
+                            position: absolute;
+                            top: 4px;
+                            left: 0;
+                          }
+                        }
+                    }
+                }
+            }
+            .ui-table-scrollable-wrapper {
+              padding-bottom: 0;
+
+                .ui-table-scrollable-view {
+                  .ui-table-scrollable-header {
+                    .ui-table-scrollable-header-box {
+                      padding-right: 0 !important;
+                    }
+                  }
+
+                    .ui-table-scrollable-body {
+
+                      &::-webkit-scrollbar-track {
+                        background: #e1e1e1;        /* color of the tracking area */
+                      }
+
+                      &::-webkit-scrollbar-thumb {
+                        background-color: #cccccc;    /* color of the scroll thumb */
+                      }
+                    }
+                }
+            }
+        }
+        button {
+            &.button-table {
+                height: 28px;
+                padding: 6px 14px !important;
+                border-radius: 2px;
+                border: solid 1px var(--accent) !important;
+                color: var(--accent);
+                background-color: var(--background-background-b-1);
+                &.button-AC {
+                    width: 94px;
+                }
+                &.button-INAC {
+                    width: 72px;
+                }
+                &.button-VER {
+                    width: 82px;
+                }
+            }
+        }
+        span {
+            &.ui-dropdown-label {
+                &.ui-inputtext {
+                    &.ui-corner-all {
+                        height: 40px !important;
+                    }
+                }
+            }
+        }
+
+        .table-detail {
+          .p-grid {
+            padding-top: 7px;
+          }
+        }
+
+        &.none-sortable {
+          .ui-table-thead {
+            >tr {
+                >th {
+                    &.ui-sortable-column {
+                      padding-left: 12px;
+                      cursor: auto;
+                    }
+                }
+            }
+        }
+        }
+
+        &.frozen-table {
+          th#actions {
+            position: fixed;
+            right: 36px;
+            width: 6em !important;
+          }
+
+          td.actions {
+            position: fixed;
+            margin-top: 1px;
+            right: 36px;
+            width: 6em !important;
+
+            .pi {
+              margin-top: 3px;
+            }
+          }
+        }
+    }
+}

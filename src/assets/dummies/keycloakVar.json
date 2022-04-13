@@ -1,0 +1,5 @@
+{
+  "keycloakUrl": "http://192.168.0.105:8080/auth",
+  "realm": "Exchange",
+  "redirect": "http://localhost:4200"
+}

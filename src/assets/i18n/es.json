@@ -1,0 +1,193 @@
+{
+  "USER": "Usuario",
+  "MENU.DASHBOARD": "Generic Dashboard",
+  "MENU.VARIATION": "Variación tipo Día",
+  "MENU.URLGRIDS": "Dashboard Personalizado",
+  "MENU.VEHICULOS": "Vehículos dentro de M30",
+  "MENU.DISTRIBUCION": "Distribución últimos 30 dias",
+  "MENU.RETENCION": "KM retenidos en M30",
+  "MENU.VELOCITY": "Velocidad Media Actual M30",
+  "MENU.COMPONENTS": "Componentes",
+  "BUTTON.SAVETEXT": "Guardar Config",
+  "BUTTON.LOADTEXT": "Cargar",
+  "movarq-widget-iframe": {
+    "SAVE": "Guardar",
+    "CANCEL": "cancelar",
+    "HEADER": "Tu Iframe Widget",
+    "SUBHEADER": "Edita tu iframe widget",
+    "URL": "Editar url",
+    "HEIGHT": "Editar altura",
+    "WIDTH": "Editar anchura",
+    "NAME": "Editar nombre",
+    "TYPE": "Editar tipo documento",
+    "PHURL": "Url Iframe",
+    "PHHEIGHT": "altura",
+    "PHWIDTH": "anchura",
+    "PHNAME": "nombre",
+    "PHTYPE": "tipo",
+    "PTSAVE": "salva y recarga",
+    "PTCANCEL": "cancela los cambios"
+  },
+  "GROUP": {
+    "1": "Panel desplegable",
+    "2": "Acciones con icono",
+    "3": "Acciones sin icono"
+  },
+  "ITEM": "Item",
+    "MovarqDashboardComponent": {
+      "TOOGLE_WIDGET_TOOLBAR": {
+        "false": "Ocultar toolbar",
+        "true": "Mostrar toolbar"
+      },
+      "SAVE_DASHBOARD": "Guardar el dashboard",
+      "ADD_WIDGET": "Añadir widget",
+      "NO_WIDGETS_MESSAGE": "No existen widgets definidos",
+      "DISCARD_CHANGES": "Descartar cambios",
+      "DASHBOARD_INFO": "Dashboard info"
+    },
+    "MovarqDashboardCreateDialogComponent": {
+      "NAME": "Nombre",
+      "CREATE_DASHBOARD": "Crear dashboard",
+      "OWNER": "Propietario",
+      "TYPE": "Tipo",
+      "ADD": "Añadir",
+      "CANCEL": "Cancelar"
+    },
+    "MovarqDashboardDeleteDialogComponent": {
+      "DELETE_CONFIRMATION": "Eliminar",
+      "CONFIRMATION_MESSAGE": "¿Estas seguro de que quieres eliminarlo?",
+      "CANCEL": "Cancelar",
+      "DELETE": "Eliminar"
+    },
+    "MovarqDashboardEditDialogComponent": {
+      "ID": "Id",
+      "NAME": "Nombre",
+      "OWNER": "Propietario",
+      "TYPE": "Tipo",
+      "UPDATE": "Actualizar",
+      "CANCEL": "Cancelar"
+    },
+    "MovarqDashboardListerComponent": {
+      "DASHBOARDS": "Dashboards",
+      "FAVOURITE_DASHBOARDS": "Favoritos",
+      "FAVOURITE_DASHBOARDS_MESSAGE": "Esta página te permite controlar tus dashboards favoritos.",
+      "ID": "Id",
+      "NAME": "Nombre",
+      "OWNER": "Propietario",
+      "SHARED_WITH": "Compartir con",
+      "GO_TO": "Ir",
+      "EDIT": "Editar",
+      "DELETE": "Eliminar",
+      "COPY": "Copiar",
+      "EDIT_WIDGETS": "Editar Widgets"
+    },
+    "MovarqDashboardManagerToolbarComponent": {
+      "TITLE": "Gestor de Dashboards",
+      "NEW": "Nuevo Dashboard",
+      "PTNEW": "Nuevo Dashboard"
+    },
+    "MovarqDashboardToolbarComponent": {
+      "MY_WORKSPACE": "Mi Worskpace",
+      "ID": "Id",
+      "NAME": "Nombre",
+      "OWNER": "Propietario",
+      "TYPE_ROLE": "Tipo/Rol",
+      "CLEAR_WIDGETS": "Limpiar",
+      "BACK": "Volver"
+    },
+    "MovarqDashboardWidgetAddDialogComponent": {
+      "ADD_NEW_WIDGET": "Añadir un nuevo widget",
+      "COMPONENT": "Componente",
+      "SELECTED_WIDGET": "Widget seleccionado",
+      "ADD": "Añadir",
+      "CANCEL": "Cancelar"
+    },
+    "MovarqWidgetToolbarComponent": {
+      "MOVE_WIDGET": "Mover Widget",
+      "ID": "Id",
+      "TYPE": "Tipo",
+      "NAME": "Nombre",
+      "TEXT": "Texto",
+      "WIDGET_NAME": "Nombre Widget",
+      "SAVE_WIDGET_NAME": "Guardar nombre del widget",
+      "EDIT_WIDGET": "Editar Widget",
+      "DUPLICATE_WIDGET": "Duplicar Widget",
+      "MINIMIZE_WIDGET": "Minimizar Widget",
+      "MAXIMIZE_WIDGET": "Maximizar Widget",
+      "DELETE_WIDGET": "Eliminar Widget"
+    },
+    "MovarqWidgetActionsComponent": {
+      "SAVE_WIDGET_NAME": "Guardar nombre del widget",
+      "EDIT_WIDGET": "Editar Widget",
+      "DUPLICATE_WIDGET": "Duplicar Widget",
+      "MINIMIZE_WIDGET": "Minimizar Widget",
+      "MAXIMIZE_WIDGET": "Maximizar Widget",
+      "DELETE_WIDGET": "Eliminar Widget"
+    },
+    "MovarqDashboardWidgetMockComponent": {
+      "HEADER": "Cabecera",
+      "SUBHEADER": "Subcabezera",
+      "TEXT": "Texto",
+      "PH_TEXT": "PH Texto",
+      "NAME_ADRESS": "Name Address",
+      "PH_NAME_ADRESS": "PH Name Address",
+      "TYPE_ADRESS": "Type Address",
+      "PH_TYPE_ADRESS": "PH Type Address",
+      "PT_SAVE": "PT Save",
+      "SAVE": "Save",
+      "CANCEL": "Cancel",
+      "PT_CANCEL": "PT Cancel",
+      "SEND": "Send",
+      "PT_LABEL_TEXT": "PT Label Text",
+      "PT_LABEL_NAME_ADDRESS": "PT Label Name Address",
+      "PT_LABEL_TYPE_ADDRESS": "PT Label Type Address",
+      "PT_LABEL_NAME": "PT Label Name",
+      "PT_LABEL_LAST_MESSAGE": "PT Label Last Message",
+      "EDIT_MODE": "Modo Edicción 1-Pantalla, 2-Dialogo, 3 Ambos",
+      "PH_EDIT_MODE": "1"
+    },
+    "movarq-widget-anomaly": {
+      "SUBHEADER": "widget",
+      "HEADER": "ANOMALIA",
+      "URL": "url del modelo",
+      "PH_URL": "http://localhost:4200/assets/model",
+      "NAME_MODEL": "nombre del modelo",
+      "PH_NAME_MODEL": "model1",
+      "SAVE": "Guardar",
+      "PT_SAVE": "salva y recarga",
+      "CANCEL": "cancelar",
+      "PT_CANCEL": "cancela los cambios",
+      "TOPANOMALIES": "Top de anomalias",
+      "PT_TOPANOMALIES": "Muestran con las anomalias mas altas",
+      "INSPECTOR": "Datos del Modelo",
+      "PT_INSPECTOR": "Histogramas de las variables del Modelo"
+    },
+    "movarq-anomaly-histogram-field": {
+      "PT_TOOLTIP": "linea1\nlinea2",
+      "VALUE": "Valor",
+      "INSTANCES": "Instancias",
+      "MINIMUN":"Mínimo",
+      "MEAN":"Media",
+      "MEDIAN":"Mediana",
+      "MAXIMUM": "Máximo",
+      "STDDEV":"Dev Std",
+      "KURTOSIS":"Kurtosis",
+      "SKEWNESS":"Oblicuidad"
+    },
+    "movarq-widget-anomaly-top-field": {
+      "PT_SCORE": "Puntacion Anomala",
+      "VALUE": "Porcentaje"},
+    "VALOR_1_REVOLUCIONES": "Revoluciones",
+    "VALOR_1_PAR_MOTOR": "Par Motor",
+    "VALOR_1_COMBUSTIBLE": "Combustible",
+    "VALOR_1_REFRIGERANTE": "Refrigerante",
+    "Skinfold":"Pliegue cutáneo",
+    "Blood pressure":"Presión sanguinea",
+    "Glucose":"Glucosa",
+    "Pregnancies":"Embarazos",
+    "Age":"Edad",
+    "Diabetes pedigree":"Pedigrí de diabetes",
+    "BMI":"BMI",
+    "Insulin":"Insulina"
+  }
+  

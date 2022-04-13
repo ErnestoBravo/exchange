@@ -1,0 +1,175 @@
+{
+	"USER": "مرحبا",
+	"movarq-widget-iframe.SAVE": "مرحبا",
+	"movarq-widget-iframe.CANCEL": "مرحبا",
+	"movarq-widget-iframe.HEADER": "مرحبا",
+	"movarq-widget-iframe.SUBHEADER": "مرحبا",
+	"movarq-widget-iframe.URL": "مرحبا",
+	"movarq-widget-iframe.HEIGHT": "مرحبا",
+	"movarq-widget-iframe.WIDTH": "مرحبا",
+	"movarq-widget-iframe.NAME": "مرحبا",
+	"movarq-widget-iframe.TYPE": "مرحبا",
+	"movarq-widget-iframe.PHURL": "مرحبا",
+	"movarq-widget-iframe.PHHEIGHT": "مرحبا",
+	"movarq-widget-iframe.PHWIDTH": "مرحبا",
+	"movarq-widget-iframe.PHNAME": "مرحبا",
+	"movarq-widget-iframe.PHTYPE": "مرحبا",
+	"movarq-widget-iframe.PTSAVE": "مرحبا",
+	"movarq-widget-iframe.PTCANCEL": "مرحبا",
+	"MovarqDashboardComponent": {
+	  "TOOGLE_WIDGET_TOOLBAR": {
+		"false": "مرحبا",
+		"true": "مرحبا"
+	  },
+	  "SAVE_DASHBOARD": "مرحبا",
+	  "ADD_WIDGET": "مرحبا",
+	  "NO_WIDGETS_MESSAGE": "مرحبا",
+	  "DISCARD_CHANGES": "مرحبا",
+	  "DASHBOARD_INFO": "مرحبا"
+	},
+	"MovarqDashboardCreateDialogComponent": {
+	  "NAME": "مرحبا",
+	  "CREATE_DASHBOARD": "مرحبا",
+	  "OWNER": "مرحبا",
+	  "TYPE": "مرحبا",
+	  "ADD": "مرحبا",
+	  "CANCEL": "مرحبا"
+	},
+	"MovarqDashboardDeleteDialogComponent": {
+	  "DELETE_CONFIRMATION": "مرحبا",
+	  "CONFIRMATION_MESSAGE": "مرحبا",
+	  "CANCEL": "مرحبا",
+	  "DELETE": "مرحبا"
+	},
+	"MovarqDashboardEditDialogComponent": {
+	  "ID": "مرحبا",
+	  "NAME": "مرحبا",
+	  "OWNER": "مرحبا",
+	  "TYPE": "مرحبا",
+	  "UPDATE": "مرحبا",
+	  "CANCEL": "مرحبا"
+	},
+	"MovarqDashboardListerComponent": {
+	  "DASHBOARDS": "مرحبا",
+	  "FAVOURITE_DASHBOARDS": "مرحبا",
+	  "FAVOURITE_DASHBOARDS_MESSAGE": "مرحبا",
+	  "ID": "مرحبا",
+	  "NAME": "مرحبا",
+	  "OWNER": "مرحبا",
+	  "SHARED_WITH": "مرحبا",
+	  "GO_TO": "مرحبا",
+	  "EDIT": "مرحبا",
+	  "DELETE": "مرحبا",
+	  "COPY": "مرحبا",
+	  "EDIT_WIDGETS": "مرحبا"
+	},
+	"MovarqDashboardManagerToolbarComponent": {
+	  "TITLE": "مرحبا Dashboards Manager",
+	  "NEW": "مرحبا New Dashboard",
+	  "PTNEW": "مرحبا New Dashboard"
+	},
+	"MovarqDashboardToolbarComponent": {
+	  "MY_WORKSPACE": "مرحبا",
+	  "ID": "مرحبا",
+	  "NAME": "مرحبا",
+	  "OWNER": "مرحبا",
+	  "TYPE_ROLE": "مرحبا",
+	  "CLEAR_WIDGETS": "مرحبا",
+	  "BACK": "مرحبا"
+	},
+	"MovarqDashboardWidgetAddDialogComponent": {
+	  "ADD_NEW_WIDGET": "مرحبا",
+	  "COMPONENT": "مرحبا",
+	  "SELECTED_WIDGET": "مرحبا",
+	  "ADD": "مرحبا",
+	  "CANCEL": "مرحبا"
+	},
+	"MovarqWidgetToolbarComponent": {
+	  "MOVE_WIDGET": "مرحبا",
+	  "ID": "مرحبا",
+	  "TYPE": "مرحبا",
+	  "NAME": "مرحبا",
+	  "TEXT": "مرحبا",
+	  "WIDGET_NAME": "مرحبا",
+	  "SAVE_WIDGET_NAME": "مرحبا",
+	  "EDIT_WIDGET": "مرحبا",
+	  "DUPLICATE_WIDGET": "مرحبا",
+	  "MINIMIZE_WIDGET": "مرحبا",
+	  "MAXIMIZE_WIDGET": "مرحبا",
+	  "DELETE_WIDGET": "مرحبا"
+	},
+	"MovarqWidgetActionsComponent": {
+	  "SAVE_WIDGET_NAME": "مرحبا",
+	  "EDIT_WIDGET": "مرحبا",
+	  "DUPLICATE_WIDGET": "مرحبا",
+	  "MINIMIZE_WIDGET": "مرحبا",
+	  "MAXIMIZE_WIDGET": "مرحبا",
+	  "DELETE_WIDGET": "مرحبا"
+	},
+	"MovarqDashboardWidgetMockComponent": {
+	  "HEADER": "مرحبا",
+	  "SUBHEADER": "مرحبا",
+	  "TEXT": "مرحبا",
+	  "PH_TEXT": "مرحبا",
+	  "NAME_ADRESS": "مرحبا",
+	  "PH_NAME_ADRESS": "مرحبا",
+	  "TYPE_ADRESS": "مرحبا",
+	  "PH_TYPE_ADRESS": "مرحبا",
+	  "PT_SAVE": "مرحبا",
+	  "SAVE": "مرحبا",
+	  "CANCEL": "مرحبا",
+	  "PT_CANCEL": "مرحبا",
+	  "SEND": "مرحبا",
+	  "PT_LABEL_TEXT": "مرحبا",
+	  "PT_LABEL_NAME_ADDRESS": "مرحبا",
+	  "PT_LABEL_TYPE_ADDRESS": "مرحبا",
+	  "PT_LABEL_NAME": "مرحبا",
+	  "PT_LABEL_LAST_MESSAGE": "مرحبا",
+	  "EDIT_MODE": "تحرير وضع 1-شاشة ، 2-حوار ، 3 كلاهما",
+	  "PH_EDIT_MODE": "1"
+	},
+	"movarq-widget-anomaly": {
+		"SUBHEADER": "مرحبا Subheader",
+		"HEADER": "مرحبا Header",
+		"URL": "مرحبا model url ",
+		"PH_URL": "http://localhost:4200/assets/model",
+		"NAME_MODEL": "مرحبا model name",
+		"PH_NAME_MODEL": "model1",
+		"SAVE": "مرحبا Save",
+		"PT_SAVE": "مرحبا save and reload",
+		"CANCEL": "مرحبا Cancel",
+		"PT_CANCEL": "مرحبا Cancel changes",
+		"TOPANOMALIES": "مرحبا Top de anomalias",
+		"PT_TOPANOMALIES": "مرحبا Muestran con las anomalias mas altas",
+		"INSPECTOR": "مرحبا Datos del Modelo",
+		"PT_INSPECTOR": "مرحبا Histogramas de las variables del Modelo"
+	},
+    "movarq-anomaly-histogram-field": {
+    	"VALUE": "مرحبا Value",
+		"INSTANCES": "مرحبا Instances",
+		"MINIMUN":"مرحبا Minimum",
+		"MEAN":"مرحبا Mean",
+		"MEDIAN":"مرحبا Median",
+		"MAXIMUM": "مرحبا Maximum",
+		"STDDEV":"مرحبا Std Dev",
+		"KURTOSIS":"مرحبا Kurtosis",
+		"SKEWNESS":"مرحبا Skewness"
+  	},
+	"movarq-widget-anomaly-top-field": {
+		"PT_SCORE": "مرحبا Anomaly Score",
+		"VALUE": "مرحبا Percentaje"
+	},
+	"VALOR_1_REVOLUCIONES": "مرحبا Revolutions",
+	"VALOR_1_PAR_MOTOR": "مرحبا Engine",
+	"VALOR_1_COMBUSTIBLE": "مرحبا Fuel",
+	"VALOR_1_REFRIGERANTE": "مرحبا Cooling",
+	"Skinfold":"مرحبا Skinfold",
+    "Blood pressure":"مرحبا Blood pressure",
+    "Glucose":"مرحبا Glucose",
+    "Pregnancies":"مرحبا Pregnancies",
+    "Age":"مرحبا Age",
+    "Diabetes pedigree":"مرحبا Diabetes pedigree",
+    "BMI":"مرحبا BMI",
+    "Insulin":"مرحبا Insulin"
+  }
+  

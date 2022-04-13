@@ -1,0 +1,2048 @@
+{
+	"code": 200,
+	"resource": "dataset/6034effe2fb31c3918004bae",
+	"location": "https://bigml.io/andromeda/dataset/6034effe2fb31c3918004bae",
+	"object": {
+		"all_fields": true,
+		"category": 0,
+		"cluster": null,
+		"cluster_status": false,
+		"code": 200,
+		"columns": 13,
+		"configuration": null,
+		"configuration_status": false,
+		"correlations": {},
+		"created": "2021-02-23T12:07:26.844000",
+		"creator": "jhipolito",
+		"credits": 0.03156757354736328,
+		"dataset_origin_status": true,
+		"description": "",
+		"download": {
+			"code": 5,
+			"excluded_input_fields": [],
+			"header": true,
+			"input_fields": [],
+			"message": "The dataset export has been created",
+			"preview": [
+				[
+					"﻿TIMESTAMP",
+					"VALOR_1_PAR_MOTOR",
+					"VALOR_1_REVOLUCIONES",
+					"VALOR_1_COMBUSTIBLE",
+					"VALOR_1_REFRIGERANTE",
+					"VEHICLE",
+					"﻿TIMESTAMP.year",
+					"﻿TIMESTAMP.month",
+					"﻿TIMESTAMP.day-of-month",
+					"﻿TIMESTAMP.day-of-week",
+					"﻿TIMESTAMP.hour",
+					"﻿TIMESTAMP.minute",
+					"﻿TIMESTAMP.second"
+				],
+				[
+					"2021-01-02 00:12:41",
+					"13",
+					"876",
+					"98",
+					"65",
+					"MDO-005",
+					"2021",
+					"1",
+					"2",
+					"6",
+					"0",
+					"12",
+					"41"
+				],
+				[
+					"2021-01-02 08:00:38",
+					"18",
+					"947",
+					"90",
+					"30",
+					"MDO-005",
+					"2021",
+					"1",
+					"2",
+					"6",
+					"8",
+					"0",
+					"38"
+				],
+				[
+					"2021-01-03 03:05:21",
+					"17",
+					"942",
+					"91",
+					"35",
+					"MDO-005",
+					"2021",
+					"1",
+					"3",
+					"7",
+					"3",
+					"5",
+					"21"
+				],
+				[
+					"2021-01-04 02:25:28",
+					"14",
+					"843",
+					"98",
+					"61",
+					"MDO-005",
+					"2021",
+					"1",
+					"4",
+					"1",
+					"2",
+					"25",
+					"28"
+				],
+				[
+					"2021-01-05 02:47:34",
+					"15",
+					"904",
+					"92",
+					"46",
+					"MDO-005",
+					"2021",
+					"1",
+					"5",
+					"2",
+					"2",
+					"47",
+					"34"
+				],
+				[
+					"2021-01-06 03:51:47",
+					"17",
+					"922",
+					"94",
+					"52",
+					"MDO-005",
+					"2021",
+					"1",
+					"6",
+					"3",
+					"3",
+					"51",
+					"47"
+				],
+				[
+					"2021-01-06 03:54:24",
+					"14",
+					"812",
+					"94",
+					"66",
+					"MDO-005",
+					"2021",
+					"1",
+					"6",
+					"3",
+					"3",
+					"54",
+					"24"
+				],
+				[
+					"2021-01-06 11:32:17",
+					"16",
+					"878",
+					"100",
+					"57",
+					"MDO-005",
+					"2021",
+					"1",
+					"6",
+					"3",
+					"11",
+					"32",
+					"17"
+				],
+				[
+					"2021-01-06 12:19:35",
+					"14",
+					"859",
+					"100",
+					"58",
+					"MDO-005",
+					"2021",
+					"1",
+					"6",
+					"3",
+					"12",
+					"19",
+					"35"
+				],
+				[
+					"2021-01-06 13:46:36",
+					"14",
+					"838",
+					"100",
+					"77",
+					"MDO-005",
+					"2021",
+					"1",
+					"6",
+					"3",
+					"13",
+					"46",
+					"36"
+				]
+			],
+			"separator": ","
+		},
+		"evaluation": null,
+		"excluded_fields": [],
+		"field_types": {
+			"categorical": 1,
+			"datetime": 1,
+			"items": 0,
+			"numeric": 11,
+			"preferred": 10,
+			"text": 0,
+			"total": 13
+		},
+		"fields": {
+			"000000": {
+				"child_ids": [
+					"000000-0",
+					"000000-1",
+					"000000-2",
+					"000000-3",
+					"000000-4",
+					"000000-5",
+					"000000-6"
+				],
+				"column_number": 0,
+				"datatype": "string",
+				"name": "﻿TIMESTAMP",
+				"optype": "datetime",
+				"order": 0,
+				"preferred": false,
+				"summary": {
+					"maximum": "2021-01-31 20:30:37",
+					"maximum_timestamp": 1612125037000,
+					"minimum": "2021-01-01 02:53:13",
+					"minimum_timestamp": 1609469593000,
+					"missing_count": 0,
+					"non_decreasing": false,
+					"non_increasing": false
+				},
+				"time_formats": [
+					"mysql"
+				]
+			},
+			"000000-0": {
+				"auto_generated": true,
+				"column_number": 6,
+				"datatype": "year",
+				"name": "﻿TIMESTAMP.year",
+				"optype": "numeric",
+				"order": 6,
+				"parent_ids": [
+					"000000"
+				],
+				"parent_optype": "datetime",
+				"preferred": false,
+				"provenance": "datetime",
+				"summary": {
+					"counts": [
+						[
+							2021,
+							727
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							727
+						],
+						"start": 2021,
+						"width": 0
+					},
+					"kurtosis": null,
+					"maximum": 2021,
+					"mean": 2021,
+					"median": 2021,
+					"minimum": 2021,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": null,
+					"standard_deviation": 0,
+					"sum": 1469267,
+					"sum_squares": 2969388607,
+					"variance": 0
+				}
+			},
+			"000000-1": {
+				"auto_generated": true,
+				"column_number": 7,
+				"datatype": "month",
+				"name": "﻿TIMESTAMP.month",
+				"optype": "numeric",
+				"order": 7,
+				"parent_ids": [
+					"000000"
+				],
+				"parent_optype": "datetime",
+				"preferred": false,
+				"provenance": "datetime",
+				"summary": {
+					"counts": [
+						[
+							1,
+							727
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							727
+						],
+						"start": 1,
+						"width": 0
+					},
+					"kurtosis": null,
+					"maximum": 1,
+					"mean": 1,
+					"median": 1,
+					"minimum": 1,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": null,
+					"standard_deviation": 0,
+					"sum": 727,
+					"sum_squares": 727,
+					"variance": 0
+				}
+			},
+			"000000-2": {
+				"auto_generated": true,
+				"column_number": 8,
+				"datatype": "day-of-month",
+				"name": "﻿TIMESTAMP.day-of-month",
+				"optype": "numeric",
+				"order": 8,
+				"parent_ids": [
+					"000000"
+				],
+				"parent_optype": "datetime",
+				"preferred": true,
+				"provenance": "datetime",
+				"summary": {
+					"counts": [
+						[
+							1,
+							14
+						],
+						[
+							2,
+							20
+						],
+						[
+							3,
+							20
+						],
+						[
+							4,
+							26
+						],
+						[
+							5,
+							32
+						],
+						[
+							6,
+							27
+						],
+						[
+							7,
+							26
+						],
+						[
+							8,
+							35
+						],
+						[
+							9,
+							20
+						],
+						[
+							10,
+							18
+						],
+						[
+							11,
+							17
+						],
+						[
+							12,
+							28
+						],
+						[
+							13,
+							32
+						],
+						[
+							14,
+							26
+						],
+						[
+							15,
+							23
+						],
+						[
+							16,
+							30
+						],
+						[
+							17,
+							21
+						],
+						[
+							18,
+							30
+						],
+						[
+							19,
+							30
+						],
+						[
+							20,
+							27
+						],
+						[
+							21,
+							23
+						],
+						[
+							22,
+							23
+						],
+						[
+							23,
+							19
+						],
+						[
+							24,
+							13
+						],
+						[
+							25,
+							18
+						],
+						[
+							26,
+							26
+						],
+						[
+							27,
+							21
+						],
+						[
+							28,
+							24
+						],
+						[
+							29,
+							28
+						],
+						[
+							30,
+							18
+						],
+						[
+							31,
+							12
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							14,
+							20,
+							20,
+							26,
+							32,
+							27,
+							26,
+							35,
+							20,
+							18,
+							17,
+							28,
+							32,
+							26,
+							23,
+							30,
+							21,
+							30,
+							30,
+							27,
+							23,
+							23,
+							19,
+							13,
+							18,
+							26,
+							21,
+							24,
+							28,
+							18,
+							12
+						],
+						"start": 1,
+						"width": 1
+					},
+					"kurtosis": -1.13778,
+					"maximum": 31,
+					"mean": 15.57634,
+					"median": 15,
+					"minimum": 1,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": 0.08385,
+					"standard_deviation": 8.53784,
+					"sum": 11324,
+					"sum_squares": 229308,
+					"variance": 72.89465
+				}
+			},
+			"000000-3": {
+				"auto_generated": true,
+				"column_number": 9,
+				"datatype": "day-of-week",
+				"name": "﻿TIMESTAMP.day-of-week",
+				"optype": "numeric",
+				"order": 9,
+				"parent_ids": [
+					"000000"
+				],
+				"parent_optype": "datetime",
+				"preferred": true,
+				"provenance": "datetime",
+				"summary": {
+					"counts": [
+						[
+							1,
+							91
+						],
+						[
+							2,
+							116
+						],
+						[
+							3,
+							107
+						],
+						[
+							4,
+							99
+						],
+						[
+							5,
+							123
+						],
+						[
+							6,
+							107
+						],
+						[
+							7,
+							84
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							91,
+							116,
+							107,
+							99,
+							123,
+							107,
+							84
+						],
+						"start": 1,
+						"width": 1
+					},
+					"kurtosis": -1.20415,
+					"maximum": 7,
+					"mean": 3.96836,
+					"median": 4,
+					"minimum": 1,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": 0.0021,
+					"standard_deviation": 1.92714,
+					"sum": 2885,
+					"sum_squares": 14145,
+					"variance": 3.71387
+				}
+			},
+			"000000-4": {
+				"auto_generated": true,
+				"column_number": 10,
+				"datatype": "hour",
+				"name": "﻿TIMESTAMP.hour",
+				"optype": "numeric",
+				"order": 10,
+				"parent_ids": [
+					"000000"
+				],
+				"parent_optype": "datetime",
+				"preferred": true,
+				"provenance": "datetime",
+				"summary": {
+					"counts": [
+						[
+							0,
+							18
+						],
+						[
+							1,
+							41
+						],
+						[
+							2,
+							79
+						],
+						[
+							3,
+							117
+						],
+						[
+							4,
+							49
+						],
+						[
+							5,
+							11
+						],
+						[
+							6,
+							16
+						],
+						[
+							7,
+							11
+						],
+						[
+							8,
+							22
+						],
+						[
+							9,
+							23
+						],
+						[
+							10,
+							35
+						],
+						[
+							11,
+							38
+						],
+						[
+							12,
+							26
+						],
+						[
+							13,
+							23
+						],
+						[
+							14,
+							30
+						],
+						[
+							15,
+							32
+						],
+						[
+							16,
+							16
+						],
+						[
+							17,
+							11
+						],
+						[
+							18,
+							4
+						],
+						[
+							19,
+							6
+						],
+						[
+							20,
+							36
+						],
+						[
+							21,
+							23
+						],
+						[
+							22,
+							31
+						],
+						[
+							23,
+							29
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							18,
+							41,
+							79,
+							117,
+							49,
+							11,
+							16,
+							11,
+							22,
+							23,
+							35,
+							38,
+							26,
+							23,
+							30,
+							32,
+							16,
+							11,
+							4,
+							6,
+							36,
+							23,
+							31,
+							29
+						],
+						"start": 0,
+						"width": 1
+					},
+					"kurtosis": -1.08766,
+					"maximum": 23,
+					"mean": 9.37689,
+					"median": 8,
+					"minimum": 0,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": 0.49427,
+					"standard_deviation": 7.17421,
+					"sum": 6817,
+					"sum_squares": 101289,
+					"variance": 51.46933
+				}
+			},
+			"000000-5": {
+				"auto_generated": true,
+				"column_number": 11,
+				"datatype": "minute",
+				"name": "﻿TIMESTAMP.minute",
+				"optype": "numeric",
+				"order": 11,
+				"parent_ids": [
+					"000000"
+				],
+				"parent_optype": "datetime",
+				"preferred": true,
+				"provenance": "datetime",
+				"summary": {
+					"bins": [
+						[
+							0.5,
+							20
+						],
+						[
+							2.38095,
+							21
+						],
+						[
+							4,
+							6
+						],
+						[
+							5.39286,
+							28
+						],
+						[
+							7,
+							9
+						],
+						[
+							8.68182,
+							22
+						],
+						[
+							10.5,
+							26
+						],
+						[
+							12.51852,
+							27
+						],
+						[
+							14.52174,
+							23
+						],
+						[
+							16.68182,
+							22
+						],
+						[
+							18.36364,
+							33
+						],
+						[
+							20,
+							16
+						],
+						[
+							21.45455,
+							22
+						],
+						[
+							23.52941,
+							34
+						],
+						[
+							25.41379,
+							29
+						],
+						[
+							27.78947,
+							19
+						],
+						[
+							29.625,
+							16
+						],
+						[
+							31.42857,
+							21
+						],
+						[
+							33,
+							8
+						],
+						[
+							34.40741,
+							27
+						],
+						[
+							36.65217,
+							23
+						],
+						[
+							38.48718,
+							39
+						],
+						[
+							40.63636,
+							22
+						],
+						[
+							43.02941,
+							34
+						],
+						[
+							45.42424,
+							33
+						],
+						[
+							47.60714,
+							28
+						],
+						[
+							49,
+							8
+						],
+						[
+							50.58333,
+							24
+						],
+						[
+							52.53125,
+							32
+						],
+						[
+							54.61111,
+							18
+						],
+						[
+							56.45,
+							20
+						],
+						[
+							58.41176,
+							17
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							20,
+							21,
+							23,
+							20,
+							22,
+							26,
+							27,
+							23,
+							22,
+							33,
+							28,
+							26,
+							35,
+							19,
+							18,
+							22,
+							17,
+							27,
+							23,
+							39,
+							21,
+							23,
+							31,
+							25,
+							25,
+							24,
+							32,
+							18,
+							20,
+							17
+						],
+						"start": 0,
+						"width": 2
+					},
+					"kurtosis": -1.18234,
+					"maximum": 59,
+					"mean": 29.5956,
+					"median": 30,
+					"minimum": 0,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": -0.01586,
+					"standard_deviation": 16.75422,
+					"sum": 21516,
+					"sum_squares": 840570,
+					"variance": 280.704
+				}
+			},
+			"000000-6": {
+				"auto_generated": true,
+				"column_number": 12,
+				"datatype": "second",
+				"name": "﻿TIMESTAMP.second",
+				"optype": "numeric",
+				"order": 12,
+				"parent_ids": [
+					"000000"
+				],
+				"parent_optype": "datetime",
+				"preferred": true,
+				"provenance": "datetime",
+				"summary": {
+					"bins": [
+						[
+							0.26923,
+							26
+						],
+						[
+							2.38462,
+							13
+						],
+						[
+							4.26087,
+							23
+						],
+						[
+							6.47368,
+							19
+						],
+						[
+							8.6,
+							20
+						],
+						[
+							10.57692,
+							26
+						],
+						[
+							12.57143,
+							21
+						],
+						[
+							14.54545,
+							22
+						],
+						[
+							16.51852,
+							27
+						],
+						[
+							18.44,
+							25
+						],
+						[
+							20.71429,
+							21
+						],
+						[
+							22.45714,
+							35
+						],
+						[
+							24.71429,
+							28
+						],
+						[
+							26.55,
+							20
+						],
+						[
+							28.40909,
+							22
+						],
+						[
+							30.34483,
+							29
+						],
+						[
+							32.63158,
+							19
+						],
+						[
+							34.6087,
+							23
+						],
+						[
+							36.46875,
+							32
+						],
+						[
+							38.52,
+							25
+						],
+						[
+							40.51852,
+							27
+						],
+						[
+							42,
+							12
+						],
+						[
+							43.54545,
+							22
+						],
+						[
+							45,
+							6
+						],
+						[
+							46.48387,
+							31
+						],
+						[
+							48.56,
+							25
+						],
+						[
+							50.59091,
+							22
+						],
+						[
+							52.5,
+							30
+						],
+						[
+							54.48148,
+							27
+						],
+						[
+							56,
+							10
+						],
+						[
+							57.45833,
+							24
+						],
+						[
+							59,
+							15
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							26,
+							14,
+							22,
+							19,
+							20,
+							26,
+							21,
+							22,
+							27,
+							25,
+							21,
+							35,
+							28,
+							20,
+							22,
+							29,
+							19,
+							23,
+							32,
+							25,
+							27,
+							22,
+							18,
+							31,
+							25,
+							22,
+							30,
+							27,
+							23,
+							26
+						],
+						"start": 0,
+						"width": 2
+					},
+					"kurtosis": -1.14461,
+					"maximum": 59,
+					"mean": 30.47593,
+					"median": 30,
+					"minimum": 0,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": -0.05507,
+					"standard_deviation": 17.06653,
+					"sum": 22156,
+					"sum_squares": 886684,
+					"variance": 291.26629
+				}
+			},
+			"000001": {
+				"column_number": 1,
+				"datatype": "int16",
+				"name": "VALOR_1_PAR_MOTOR",
+				"optype": "numeric",
+				"order": 1,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							0,
+							41
+						],
+						[
+							5.33333,
+							3
+						],
+						[
+							9.28571,
+							7
+						],
+						[
+							11.76667,
+							60
+						],
+						[
+							13.44118,
+							170
+						],
+						[
+							15.5283,
+							159
+						],
+						[
+							17.4188,
+							117
+						],
+						[
+							19.32,
+							50
+						],
+						[
+							21.58333,
+							12
+						],
+						[
+							24.06667,
+							15
+						],
+						[
+							26.66667,
+							6
+						],
+						[
+							28.36364,
+							11
+						],
+						[
+							30,
+							7
+						],
+						[
+							31.9,
+							10
+						],
+						[
+							34.8,
+							5
+						],
+						[
+							36.6,
+							5
+						],
+						[
+							38.4,
+							5
+						],
+						[
+							40.33333,
+							3
+						],
+						[
+							43.28571,
+							7
+						],
+						[
+							46.66667,
+							3
+						],
+						[
+							49.4,
+							5
+						],
+						[
+							52.125,
+							8
+						],
+						[
+							54.66667,
+							3
+						],
+						[
+							56.66667,
+							3
+						],
+						[
+							58.33333,
+							3
+						],
+						[
+							61,
+							1
+						],
+						[
+							65,
+							1
+						],
+						[
+							78,
+							1
+						],
+						[
+							80,
+							1
+						],
+						[
+							86,
+							1
+						],
+						[
+							92,
+							1
+						],
+						[
+							130,
+							3
+						]
+					],
+					"exact_histogram": {
+						"open_max": 3,
+						"populations": [
+							41,
+							7,
+							233,
+							310,
+							40,
+							20,
+							18,
+							14,
+							10,
+							6,
+							11,
+							8,
+							1,
+							1,
+							0,
+							1,
+							1,
+							1,
+							1
+						],
+						"start": 0,
+						"width": 5
+					},
+					"kurtosis": 23.9784,
+					"maximum": 130,
+					"mean": 18.29986,
+					"median": 16,
+					"minimum": 0,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": 3.8885,
+					"standard_deviation": 13.23535,
+					"sum": 13304,
+					"sum_squares": 370638,
+					"variance": 175.17442
+				}
+			},
+			"000002": {
+				"column_number": 2,
+				"datatype": "int16",
+				"name": "VALOR_1_REVOLUCIONES",
+				"optype": "numeric",
+				"order": 2,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							0,
+							4
+						],
+						[
+							706.33333,
+							3
+						],
+						[
+							804.05926,
+							270
+						],
+						[
+							866.10236,
+							127
+						],
+						[
+							919.7644,
+							191
+						],
+						[
+							1021,
+							6
+						],
+						[
+							1115.75,
+							4
+						],
+						[
+							1176.66667,
+							3
+						],
+						[
+							1261.33333,
+							6
+						],
+						[
+							1343.2,
+							5
+						],
+						[
+							1401.2,
+							5
+						],
+						[
+							1477,
+							6
+						],
+						[
+							1584.11111,
+							9
+						],
+						[
+							1694.875,
+							8
+						],
+						[
+							1766.66667,
+							9
+						],
+						[
+							1831.66667,
+							3
+						],
+						[
+							1898.33333,
+							6
+						],
+						[
+							1945.33333,
+							3
+						],
+						[
+							2018.2,
+							5
+						],
+						[
+							2126.7,
+							10
+						],
+						[
+							2184,
+							1
+						],
+						[
+							2285.83333,
+							12
+						],
+						[
+							2352,
+							5
+						],
+						[
+							2416.8,
+							5
+						],
+						[
+							2509.85714,
+							7
+						],
+						[
+							2615,
+							2
+						],
+						[
+							2708.75,
+							4
+						],
+						[
+							2788,
+							1
+						],
+						[
+							2948,
+							1
+						],
+						[
+							3121,
+							1
+						],
+						[
+							3320,
+							1
+						],
+						[
+							8192,
+							4
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							4,
+							592,
+							33,
+							40,
+							39,
+							13,
+							2,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							4
+						],
+						"start": 0,
+						"width": 500
+					},
+					"kurtosis": 57.73874,
+					"maximum": 8192,
+					"mean": 1071.51032,
+					"median": 876,
+					"minimum": 0,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": 6.39744,
+					"standard_deviation": 698.9179799999999,
+					"sum": 778988,
+					"sum_squares": 1189334762,
+					"variance": 488486.34115
+				}
+			},
+			"000003": {
+				"column_number": 3,
+				"datatype": "int8",
+				"name": "VALOR_1_COMBUSTIBLE",
+				"optype": "numeric",
+				"order": 3,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							45,
+							2
+						],
+						[
+							47.4,
+							5
+						],
+						[
+							50.5,
+							2
+						],
+						[
+							52,
+							1
+						],
+						[
+							54.66667,
+							3
+						],
+						[
+							57.5,
+							2
+						],
+						[
+							60,
+							6
+						],
+						[
+							61,
+							1
+						],
+						[
+							62,
+							2
+						],
+						[
+							64.25,
+							4
+						],
+						[
+							68,
+							1
+						],
+						[
+							70.75,
+							4
+						],
+						[
+							72,
+							3
+						],
+						[
+							74.2,
+							5
+						],
+						[
+							76,
+							1
+						],
+						[
+							77.42857,
+							7
+						],
+						[
+							79.16667,
+							6
+						],
+						[
+							81.84615,
+							13
+						],
+						[
+							84.5,
+							16
+						],
+						[
+							86.34211,
+							38
+						],
+						[
+							88,
+							30
+						],
+						[
+							89,
+							19
+						],
+						[
+							90,
+							23
+						],
+						[
+							91,
+							31
+						],
+						[
+							92,
+							59
+						],
+						[
+							94,
+							51
+						],
+						[
+							95,
+							36
+						],
+						[
+							96,
+							62
+						],
+						[
+							97,
+							20
+						],
+						[
+							98,
+							49
+						],
+						[
+							99,
+							19
+						],
+						[
+							100,
+							206
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							2,
+							3,
+							2,
+							2,
+							1,
+							3,
+							1,
+							1,
+							7,
+							2,
+							4,
+							0,
+							1,
+							4,
+							3,
+							5,
+							5,
+							8,
+							3,
+							11,
+							16,
+							38,
+							49,
+							54,
+							59,
+							87,
+							82,
+							68,
+							206
+						],
+						"start": 44,
+						"width": 2
+					},
+					"kurtosis": 7.40669,
+					"maximum": 100,
+					"mean": 92.61073,
+					"median": 95,
+					"minimum": 45,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": -2.49281,
+					"standard_deviation": 9.65898,
+					"sum": 67328,
+					"sum_squares": 6303028,
+					"variance": 93.29592
+				}
+			},
+			"000004": {
+				"column_number": 4,
+				"datatype": "int8",
+				"name": "VALOR_1_REFRIGERANTE",
+				"optype": "numeric",
+				"order": 4,
+				"preferred": true,
+				"summary": {
+					"bins": [
+						[
+							28,
+							1
+						],
+						[
+							30,
+							1
+						],
+						[
+							32,
+							1
+						],
+						[
+							33.71429,
+							7
+						],
+						[
+							35.55556,
+							9
+						],
+						[
+							38,
+							17
+						],
+						[
+							40.58824,
+							17
+						],
+						[
+							42.5,
+							36
+						],
+						[
+							45.02222,
+							45
+						],
+						[
+							47.53846,
+							26
+						],
+						[
+							49.89744,
+							39
+						],
+						[
+							52.42424,
+							33
+						],
+						[
+							54.56,
+							25
+						],
+						[
+							56.48387,
+							31
+						],
+						[
+							58.34783,
+							23
+						],
+						[
+							60.70588,
+							17
+						],
+						[
+							62.61111,
+							18
+						],
+						[
+							64.59375,
+							32
+						],
+						[
+							66.48,
+							25
+						],
+						[
+							68.3125,
+							16
+						],
+						[
+							70.5,
+							18
+						],
+						[
+							72.4,
+							15
+						],
+						[
+							74.5,
+							32
+						],
+						[
+							76.5102,
+							49
+						],
+						[
+							78.43103,
+							58
+						],
+						[
+							80.4375,
+							16
+						],
+						[
+							82,
+							4
+						],
+						[
+							83.5,
+							12
+						],
+						[
+							85.59259,
+							27
+						],
+						[
+							87.55814,
+							43
+						],
+						[
+							89.39394,
+							33
+						],
+						[
+							92,
+							1
+						]
+					],
+					"exact_histogram": {
+						"populations": [
+							1,
+							9,
+							26,
+							67,
+							71,
+							69,
+							68,
+							48,
+							60,
+							49,
+							123,
+							32,
+							90,
+							14
+						],
+						"start": 25,
+						"width": 5
+					},
+					"kurtosis": -1.21569,
+					"maximum": 92,
+					"mean": 64.18157,
+					"median": 65,
+					"minimum": 28,
+					"missing_count": 0,
+					"population": 727,
+					"skewness": -0.0722,
+					"standard_deviation": 16.15353,
+					"sum": 46660,
+					"sum_squares": 3184152,
+					"variance": 260.93668
+				}
+			},
+			"000005": {
+				"column_number": 5,
+				"datatype": "string",
+				"name": "VEHICLE",
+				"optype": "categorical",
+				"order": 5,
+				"preferred": true,
+				"summary": {
+					"categories": [
+						[
+							"MDO-008",
+							106
+						],
+						[
+							"MDO-005",
+							74
+						],
+						[
+							"MDO-070",
+							69
+						],
+						[
+							"MDO-015",
+							66
+						],
+						[
+							"MDO-066",
+							64
+						],
+						[
+							"MDO-099",
+							54
+						],
+						[
+							"MDO-091",
+							53
+						],
+						[
+							"MDO-100",
+							53
+						],
+						[
+							"MDO-089",
+							45
+						],
+						[
+							"MDO-012",
+							44
+						],
+						[
+							"MDO-095",
+							42
+						],
+						[
+							"MDO-090",
+							36
+						],
+						[
+							"MDO-062",
+							21
+						]
+					],
+					"missing_count": 0
+				},
+				"term_analysis": {
+					"enabled": true
+				}
+			}
+		},
+		"fields_meta": {
+			"count": 13,
+			"effective_fields": 12,
+			"image": 0,
+			"limit": 1000,
+			"offset": 0,
+			"preferred": 10,
+			"query_total": 13,
+			"total": 13
+		},
+		"input_fields": [
+			"000000",
+			"000001",
+			"000002",
+			"000003",
+			"000004",
+			"000005",
+			"000000-0",
+			"000000-1",
+			"000000-2",
+			"000000-3",
+			"000000-4",
+			"000000-5",
+			"000000-6"
+		],
+		"juxtapose": false,
+		"locale": "es-es",
+		"missing_numeric_rows": 0,
+		"missing_tokens": [
+			"",
+			"NaN",
+			"NULL",
+			"N/A",
+			"null",
+			"-",
+			"#REF!",
+			"#VALUE!",
+			"?",
+			"#NULL!",
+			"#NUM!",
+			"#DIV/0",
+			"n/a",
+			"#NAME?",
+			"NIL",
+			"nil",
+			"na",
+			"#N/A",
+			"NA"
+		],
+		"name": "CAD/AVL Multivariable",
+		"name_options": "727 instances, 13 fields (1 categorical, 11 numeric, 1 datetime), 3 non-preferred",
+		"new_fields": [],
+		"number_of_anomalies": 2,
+		"number_of_anomalyscores": 3,
+		"number_of_associations": 0,
+		"number_of_associationsets": 0,
+		"number_of_batchanomalyscores": 1,
+		"number_of_batchcentroids": 0,
+		"number_of_batchpredictions": 0,
+		"number_of_batchprojections": 0,
+		"number_of_batchtopicdistributions": 0,
+		"number_of_centroids": 0,
+		"number_of_clusters": 0,
+		"number_of_correlations": 0,
+		"number_of_deepnets": 0,
+		"number_of_ensembles": 0,
+		"number_of_evaluations": 0,
+		"number_of_forecasts": 0,
+		"number_of_linearregressions": 0,
+		"number_of_logisticregressions": 0,
+		"number_of_models": 0,
+		"number_of_optimls": 0,
+		"number_of_pca": 0,
+		"number_of_predictions": 0,
+		"number_of_projections": 0,
+		"number_of_statisticaltests": 0,
+		"number_of_timeseries": 0,
+		"number_of_topicdistributions": 0,
+		"number_of_topicmodels": 0,
+		"objective_field": {
+			"column_number": 5,
+			"datatype": "string",
+			"id": "000005",
+			"name": "VEHICLE",
+			"optype": "categorical",
+			"order": 5,
+			"term_analysis": {
+				"enabled": true
+			}
+		},
+		"optiml": null,
+		"optiml_status": false,
+		"origin_batch_dataset": null,
+		"origin_batch_dataset_status": false,
+		"origin_batch_model": null,
+		"origin_batch_model_status": false,
+		"origin_batch_resource": null,
+		"origin_batch_status": false,
+		"output_fields": [],
+		"price": 0.0,
+		"private": true,
+		"project": "project/603413220d052e3ad2000b50",
+		"refresh_field_types": false,
+		"refresh_objective": false,
+		"refresh_preferred": false,
+		"resource": "dataset/6034effe2fb31c3918004bae",
+		"row_offset": 0,
+		"row_step": 1,
+		"rows": 727,
+		"shared": false,
+		"size": 33101,
+		"source": "source/6034efaffb7bdd08f8000d4f",
+		"source_status": true,
+		"sql_output_fields": [],
+		"statisticaltest": null,
+		"status": {
+			"bytes": 33101,
+			"code": 5,
+			"elapsed": 1824,
+			"field_errors": {},
+			"message": "The dataset has been created",
+			"progress": 1,
+			"row_format_errors": {
+				"total": 0
+			},
+			"serialized_rows": 727
+		},
+		"subscription": true,
+		"tags": [],
+		"tde_download": {
+			"code": 0,
+			"excluded_input_fields": [],
+			"input_fields": [],
+			"message": "",
+			"preview": []
+		},
+		"term_limit": 1000,
+		"timeseries": null,
+		"timeseries_status": false,
+		"type": 0,
+		"updated": "2021-03-25T14:50:52.027000"
+	},
+	"error": null
+}

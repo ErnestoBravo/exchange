@@ -1,0 +1,17 @@
+<ul class="breadcrumb">
+  <li>
+    <span class="ux-ui-icon-breadcrumb"></span>
+  </li>
+  <li *ngFor="let item of config">
+    <a *ngIf="item.route != null" [routerLink]="item.route">
+      <span *ngFor="let label of item.label">
+        {{ label | translate }}
+      </span>
+    </a>
+    <span *ngIf="item.route == null">
+      <span *ngFor="let label of item.label">
+        {{ label | translate }}
+      </span>
+    </span>
+  </li>
+</ul>

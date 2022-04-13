@@ -1,0 +1,8 @@
+def command(cfg)
+{
+    return("node-version && " +
+           "npm install --verbose && " +
+           "npm run build --configuration=develop")
+}
+return this
+

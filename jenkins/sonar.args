@@ -1,0 +1,12 @@
+def command(cfg)
+{
+return("-Dsonar.sources=src " +
+"-Dsonar.exclusions=**/node_modules/**,**/*.spec.ts,**/bootstrap.css,**/coverage/**,**/*.html,**/src/assets/sass/sass.js,**/src/app/app-routing.module.ts" +
+"-Dsonar.sourceEncoding=UTF-8 " +
+"-Dsonar.tests=src " +
+"-Dsonar.test.inclusions=**/*spec.ts " +
+"-Dsonar.ts.tslintconfigpath=./tslint.json " +
+"-Dsonar.typescript.lcov.reportPaths=coverage/${cfg.projectName}/lcov.info " +
+"-Dsonar.typescript.exclusions=**/node_modules/**,**/typings.d.ts,**/main.ts,**/environments/environment*.ts,**/*routing.module.ts")
+}
+return this

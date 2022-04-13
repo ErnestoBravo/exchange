@@ -1,0 +1,75 @@
+<div class="operation-form">
+    <div class="p-d-flex">
+        <!-- <div class="p-grid"> -->
+        <form class="p-col-12" [formGroup]="form">
+            <p>Mantenedor De Cargas: Agregar</p>
+            <div class="p-grid">
+                <div class="p-col-3">
+                    <input type="text" formControlName="operacion" placeholder="N° Operación Asociada">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="tipoOperacion" placeholder="Tipo de Operación">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="tipoExpedicion" placeholder="Tipo de Expedición">
+                </div>
+              </div>
+            <div class="p-grid">
+                <div class="p-col-3">
+                    <input type="text" formControlName="patente" placeholder="Patente Vehículo">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="agenteCarga" placeholder="Agente de Carga">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="duennoCarga" placeholder="Dueño de Carga">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="kilosBrustos" placeholder="Kilos Brutos">
+                </div>               
+            </div>
+            <div class="p-grid">
+                <div class="p-col-3">
+                    <input type="text" formControlName="tipoDocumento" placeholder="Tipo Documento">
+                </div>     
+                <div class="p-col-3">
+                    <input type="text" formControlName="identificadorDocumento" placeholder="Identificador Documento">
+                </div>     
+            </div>
+           
+            <p>Datos</p>
+            <div class="p-grid">
+                <div class="p-col-3" *ngIf="!form.controls.gatheringRequestNumber.disabled">
+                    <p-inputNumber formControlName="gatheringRequestNumber" [useGrouping]="false"
+                        placeholder="Gathering Request Number" [min]="0">
+                    </p-inputNumber>
+                </div>
+                <div class="p-col-3" *ngIf="!form.controls.storer.disabled">
+                    <p-inputNumber formControlName="storer" [useGrouping]="false" placeholder="Storer" [min]="0">
+                    </p-inputNumber>
+                </div>
+               
+                <div class="p-col-3" *ngIf="!form.controls.automaticVehicleRequest.disabled">
+                    <div class="p-field-checkbox">
+                        <p-checkbox formControlName="automaticVehicleRequest" binary="true"
+                            inputId="automaticVehicleRequest">
+                        </p-checkbox>
+                        <label for="binary">Automatic Vehicle Request</label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="p-grid">
+                <div class="p-col-2 p-offset-7 p-text-right">
+                    <p-button label="Back" (onClick)="back()"></p-button>
+                </div>
+                <div class="p-col-2 p-text-right">
+                    <p-button label="Create Operation" (onClick)="createOrModify()" [disabled]="!form.valid"></p-button>
+                </div>
+            </div>
+          
+        </form>
+        <!-- </div> -->
+    </div>
+
+</div>

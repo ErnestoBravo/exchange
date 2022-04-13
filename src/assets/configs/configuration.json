@@ -1,0 +1,53 @@
+{
+  "data": {
+    "languajecomponent": {
+      "langs_": true,
+      "langs": [
+        {
+          "label": "Español (ES)",
+          "value": {
+            "id": 1,
+            "name": "ES",
+            "code": "es"
+          }
+        },
+        {
+          "label": "English (EN)",
+          "value": {
+            "id": 2,
+            "name": "EN",
+            "code": "en"
+          }
+        }
+      ]
+    },
+    "auth_config": {
+      "url": "/auth",
+      "realm": "exchange-realm",
+      "clientId": "angular-frontend",
+      "clientIdPermissions": [
+        "spring-backend"
+      ],
+      "urlRedirect": "https://opepuevuc-dev-exchange-hmi.apps.k8s.mova.indra.es/",
+      "showLiteral": false,
+      "showUser": false,
+      "showLogout": false,
+      "locale": "es"
+    },
+    "auth_config_local": {
+      "url": "http://192.168.0.105:8080/auth",
+      "realm": "exchange",
+      "clientId": "angular-frontend",
+      "checkLoginIframe": false,
+      "clientIdPermissions": [
+        "spring-backend"
+      ],
+      "urlRedirect": "http://localhost:4200",
+      "showLiteral": false,
+      "showUser": false,
+      "showLogout": false,
+      "locale": "es"
+    },
+    "display": true
+  }
+}

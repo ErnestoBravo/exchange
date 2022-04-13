@@ -1,0 +1,18 @@
+<ng-container *ngIf="config.data.loading !== null && config.data.loading === true">
+  <div class="loading-content">
+    <span class="pi pi-spin pi-spinner"></span>
+    <p>{{ config.data.message }}</p>
+  </div>
+</ng-container>
+<ng-container *ngIf="(config.data.loading === null || config.data.loading === false) && config.data.message !== null">
+  <div class="errorModal">
+    <span class="pi pi-times"></span>
+    <p class="title">{{ config.data.header }}</p>
+    <p class="message">{{ config.data.message }}</p>
+  </div>
+</ng-container>
+<p-footer class="ui-dialog-footer" *ngIf="config.data.buttons !== null">
+  <div *ngFor="let button of config.data.buttons">
+    <p-button (click)="closeDialog()" label="{{ button.label }}" styleClass="{{ button.class }}"></p-button>
+  </div>
+</p-footer>

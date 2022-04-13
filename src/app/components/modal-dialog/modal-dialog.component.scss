@@ -1,0 +1,42 @@
+.ui-loading {
+  &.ui-dialog {
+    width: 382px;
+    height: 240px;
+
+    .ui-dialog-content {
+      height: 15vw;
+      text-align: center;
+
+      .loading-content {
+        padding-top: 10px;
+
+        .pi-spinner {
+          font-size: 7em;
+
+          &:before {
+            color: var(--accent);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* MEDIA QUERIES MOBILE*/
+@media (max-width: 770px) {
+  .ui-loading {
+    &.ui-dialog {
+      width: 320px;
+      height: 200px;
+
+      .ui-dialog-titlebar {
+        padding-bottom: 0 !important;
+      }
+
+      .ui-dialog-content {
+        height: 160px;
+      }
+    }
+  }
+}

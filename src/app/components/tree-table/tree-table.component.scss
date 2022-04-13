@@ -1,0 +1,24 @@
+body {
+  .ux-ui-tree-table {
+    border: 1px solid #dfe3e6;
+    .table-list {
+        border: none;
+        color: var(--foreward-foreward-f-1);
+    }
+    .ui-treetable-thead>tr>th {
+        background-color: var(--background-background-b-2) !important;
+        text-transform: uppercase;
+        width: 150px;
+        height: 40px;
+        padding: 12px;
+        border: none !important;
+    }
+
+    tr:nth-child(odd) {
+        background-color: var(--background-background-b-1);
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9 !important;
+    }
+  }
+}

@@ -28,7 +28,7 @@ server {
 
     location ${CP2_PATH}/ {
         add_header 'Access-Control-Allow-Origin' '*';
-        root   /usr/share/nginx/html/silogport-hmi;
+        root   /usr/share/nginx/html/exchange-hmi;
         try_files $uri $uri/ /index.html;
         index  index.html index.htm;
       }
@@ -43,7 +43,7 @@ server {
       }
 
       location ${CP2_PATH}/language {
-        proxy_pass ${REST_SILOGPORT_MASTER_DATA}/language;
+        proxy_pass ${REST_EXCHANGE_MASTER_DATA}/language;
         proxy_pass_request_headers on;
         proxy_pass_request_body on;
       }

@@ -1,11 +1,11 @@
 {
-  "name": "silogport-hmi",
+  "name": "exchange-hmi",
   "version": "0.0.0",
   "config": {
     "packagesPath": [
       "./package.json"
     ],
-    "distFolder": "./dist/silogport-hmi"
+    "distFolder": "./dist/exchange-hmi"
   },
   "scripts": {
     "ng": "ng",
@@ -16,7 +16,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "node-high-memory": "node --max_old_space_size=16000 ./node_modules/@angular/cli/bin/ng",
-    "copy-files": "cp package.json dist/silogport-hmi/"
+    "copy-files": "cp package.json dist/exchange-hmi/"
   },
   "private": false,
   "dependencies": {
@@ -79,9 +79,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.5"
-  },
-  "publishConfig": {
-    "type": "git",
-    "registry": "https://slmaven.indra.es/nexus/repository/OPEPUE_Npm/"
   }
 }

@@ -20,7 +20,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 image:
-  repository: artifactory.mova.indra.es/docker-opepue/popepuevuc/silogport-hmi
+  repository: artifactory.exchange.cl/docker-opepue/popepuevuc/exchange-hmi
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "develop"
@@ -74,7 +74,7 @@ ingress:
   ingressName: ""
   hosts:
     - name: ""
-      domain: apps.k8s.mova.indra.es
+      domain: apps.cl
       path: /
       serviceName: ""
       servicePort: ""

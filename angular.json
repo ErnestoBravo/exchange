@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "silogport-hmi": {
+    "exchange-hmi": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/silogport-hmi",
+            "outputPath": "dist/exchange-hmi",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -140,18 +140,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "silogport-hmi:build"
+            "browserTarget": "exchange-hmi:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "silogport-hmi:build:production"
+              "browserTarget": "exchange-hmi:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "silogport-hmi:build"
+            "browserTarget": "exchange-hmi:build"
           }
         },
         "test": {
@@ -192,18 +192,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "silogport-hmi:serve"
+            "devServerTarget": "exchange-hmi:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "silogport-hmi:serve:production"
+              "devServerTarget": "exchange-hmi:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "silogport-hmi",
+  "defaultProject": "exchange-hmi",
   "cli": {
     "analytics": false
   }

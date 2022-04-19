@@ -1,4 +1,4 @@
-ARG BASE_REPOSITORY=artifactory.mova.indra.es/docker/
+ARG BASE_REPOSITORY=artifactory.exchange.cl/docker/
 ARG BASE_IMAGENAME=nginx
 ARG BASE_TAGVERSION=latest
 FROM ${BASE_REPOSITORY}${BASE_IMAGENAME}:${BASE_TAGVERSION}
@@ -21,8 +21,8 @@ ARG GIT_PAGE=unknwon
 ARG COMMENT=unknwon
 
 #Images label
-LABEL maintainer="Ports-Silogport Team" \
-  vendor1="Indra Transportes" \
+LABEL maintainer="Echange Team" \
+  vendor1="exchange" \
   git.BRANCH=$BRANCH \
   git.VERSION=$VERSION \
   git.BUILDER=$BUILDER \

@@ -28,15 +28,15 @@
       "clientIdPermissions": [
         "spring-backend"
       ],
-      "urlRedirect": "https://opepuevuc-dev-exchange-hmi.apps.k8s.mova.indra.es/",
+      "urlRedirect": "https://exchange-hmi.cl/",
       "showLiteral": false,
       "showUser": false,
       "showLogout": false,
       "locale": "es"
     },
     "auth_config_local": {
-      "url": "http://192.168.0.105:8080/auth",
-      "realm": "exchange",
+      "url": "https://testing2021.silogport.cl/auth",
+      "realm": "silogport",
       "clientId": "angular-frontend",
       "checkLoginIframe": false,
       "clientIdPermissions": [
@@ -46,7 +46,7 @@
       "showLiteral": false,
       "showUser": false,
       "showLogout": false,
-      "locale": "es"
+      "locale": "cl"
     },
     "display": true
   }

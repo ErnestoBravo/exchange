@@ -1,4 +1,4 @@
-@Library("PipelineIndraGlobalLibrary") _
+@Library("PipelineGlobalLibrary") _
 
 def CLOUD = "karbon-k8s"
 def TEAM="opepue"
@@ -12,7 +12,7 @@ properties(
     )
 ])
 
-def configCI = indraCI {
+def configCI = CI {
     cloud                          = CLOUD
     team                           = TEAM
     containerEngine                = "kaniko-jfrog"
@@ -69,7 +69,7 @@ if (configCI.git.parentBranch == "tag" || configCI.git.branch.startsWith("releas
 }
 
 if ( deploy ) {
-    def configCD = indraCD {
+    def configCD = CD {
         cloud = CLOUD
         team = TEAM
         git = [
@@ -77,9 +77,9 @@ if ( deploy ) {
         ]
         helm = [
             charts: [
-                "helm-indra-generic-1" : [
-                  		"helmPackage": "helm/indra-generic", "version": "1.2.4", "environment": env,
-                		"valuesFile": "./helm_values/silogport-hmi-rke-mova-${env}.yaml"
+                "helm-generic-1" : [
+                  		"helmPackage": "helm/generic", "version": "1.2.4", "environment": env,
+                		"valuesFile": "./helm_values/exchange-hmi-rke-mova-${env}.yaml"
                 ] ,
             ]
         ]

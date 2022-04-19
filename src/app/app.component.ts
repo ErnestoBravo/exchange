@@ -30,11 +30,11 @@ export interface AuditTrail {
 export class AppComponent implements OnInit {
   @ViewChild('submenu') submenu: Array<MovarqMenu2SubmenuComponent>;
   title = 'Exchange';
-  previousUrl = 'silogport_hmi_page_home';
+  previousUrl = 'exchange_hmi_page_home';
 
   menu = [];
 
-  logos = ['assets/icons/INDRA_SPA_LOGO.PNG', 'assets/icons/LOGO_TOPBAR.PNG'];
+  logos = ['assets/icons/logo.PNG', 'assets/icons/LOGO_TOPBAR.PNG'];
   /** Auth configuration */
   // tslint:disable-next-line: variable-name
   auth_config: any;
@@ -118,7 +118,7 @@ export class AppComponent implements OnInit {
         }
 
         if (locationRoute !== '') {
-          const currentUrlSlug = 'silogport_hmi_page_' + locationRoute.split('#')[0].split('/')[0].split('?')[0];
+          const currentUrlSlug = 'exchange_hmi_page_' + locationRoute.split('#')[0].split('/')[0].split('?')[0];
           if (currentUrlSlug) {
             this.renderer.addClass(document.body, currentUrlSlug);
           }

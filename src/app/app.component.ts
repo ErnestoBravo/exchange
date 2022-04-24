@@ -663,7 +663,7 @@ export class AppComponent implements OnInit {
   }
 
   viewLoadUnit() {
-    this.router.navigate(['loadunit/']);
+    this.router.navigate(['loadunit/view']);
 }
 }
 

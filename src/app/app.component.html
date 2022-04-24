@@ -1,6 +1,15 @@
 <movarq-auth *ngIf="!isLogged && auth_config" [config]="auth_config" showLiteral=false></movarq-auth>
 <div *ngIf=isLogged class="mova-quickstart">
   <movarq-topbar2 class="mova-quickstart__topbar2" datetimeAlign="left" [hideDate]="false">
+    <div class="p-col-3">
+      <p-button label="Buscar" icon="pi pi-search" (onClick)="viewLoadUnit()"></p-button>
+    </div>
+    <div class="p-col-3">
+      <p-button label="+ Agregar" (onClick)="viewLoadUnit()"></p-button>
+    </div>
+    <div class="p-col-3">
+      <p-button label="ver" (onClick)="viewLoadUnit()"></p-button>
+    </div>
     <h1 class="ui-logo"><span>EXCHANGE</span></h1>
     <div class="ux-ui-top-bar">
       <ul>

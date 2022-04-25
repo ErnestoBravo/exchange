@@ -1,9 +1,9 @@
 <movarq-auth *ngIf="!isLogged && auth_config" [config]="auth_config" showLiteral=false></movarq-auth>
 
 <div *ngIf=isLogged class="mova-quickstart">
-  <movarq-topbar2 class="mova-quickstart__topbar2" datetimeAlign="left" [hideDate]="false">
+  <movarq-topbar2 >
     <div class="p-col-3">
-      <p-button label="Nombre corporativo" icon="pi pi-search" (onClick)="viewLoadUnit()"></p-button>
+      <p-button label="Nombre corporativo" (onClick)="viewLoadUnit()"></p-button>
     </div>
     <div class="p-col-3">
       <p-button label="Vista Trader" (onClick)="viewLoadUnit()"></p-button>
@@ -15,6 +15,7 @@
       <p-button label="Usuario" (onClick)="viewLoadUnit()"></p-button>
     </div>
   </movarq-topbar2>
+
   <div #container class="mova-quickstart__container" (click)="closeSubMenu()">
     <router-outlet></router-outlet>
   </div>
@@ -22,39 +23,24 @@
 
 <br/><br/><br/>
 
-<div class="p-grid">
-  <div class="p-col-3">
+<div class="content-section implementation">
+  <div class="card">
       <p-button label="Abonar" icon="pi pi-search" (onClick)="abonar()"></p-button>
   </div>
 </div>
-<div class="p-grid">
-  <div class="p-col-3">
+<div class="content-section implementation">
+  <div>
       <p-button label="Compra/Venta" icon="pi pi-search" (onClick)="compraVenta()"></p-button>
   </div>
 </div>
-<div class="p-grid">
-  <div class="p-col-3">
+<div class="content-section implementation">
+  <div>
       <p-button label="Retirar" icon="pi pi-search" (onClick)="retirar()"></p-button>
   </div>
 </div>
-<div class="p-grid">
-  <div class="p-col-3">
+<div class="content-section implementation">
+  <div>
       <p-button label="No se" icon="pi pi-search" (onClick)="abonar()"></p-button>
-  </div>
-</div>
 
-<!-- Dialog confirm -->
-<p-confirmDialog key="first" [closable]="true" icon="pi pi-exclamation-circle"
-  [styleClass]="extraClasses + utils.extraClasses" [style]="{ width: '500px' }" [baseZIndex]="10000"></p-confirmDialog>
-
-<p-confirmDialog key="second" [closable]="true" icon="pi pi-exclamation-circle"
-  [styleClass]="extraClasses + utils.extraClasses" [style]="{ width: '500px' }" [baseZIndex]="10000"></p-confirmDialog>
-
-<div [style]="(utils.isLoading)? 'display: table': 'display: none'" class="ux-ui-loading-modal">
-  <div class="middle">
-    <div class="loading-container ui-corner-all">
-      <span class="pi pi-spin pi-spinner"></span>
-      <p>{{ 'GENERICS.loading' | translate }}</p>
-    </div>
   </div>
 </div>

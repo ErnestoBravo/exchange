@@ -6,7 +6,6 @@ import { Routes, RouterModule, Router } from '@angular/router';
 
 export const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
-  { path: 'loadunit', loadChildren: () => import('./modules/loadunit/loadunit.module').then(m => m.LoadUnitModule)},
   { path: 'abonar', loadChildren: () => import('./modules/abonar/abonar.module').then(m => m.AbonarModule)},
   { path: 'compraVenta', loadChildren: () => import('./modules/compraVenta/compraVenta.module').then(m => m.CompraVentaModule)},
   { path: 'retirar', loadChildren: () => import('./modules/retirar/retirar.module').then(m => m.RetirarModule)},

@@ -16,6 +16,7 @@ import {AccordionModule} from 'primeng/accordion';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 
+
 @NgModule({
     declarations: [
         AbonarMainComponent

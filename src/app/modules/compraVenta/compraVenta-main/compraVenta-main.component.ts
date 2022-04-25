@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ElementTypeDto } from 'src/app/core/model/dto/element-type-dto';
-import { CargaDto } from 'src/app/core/model/dto/carga-dto';
-import { MissionService } from 'src/app/core/services/modules/operation/mission.service';
-import { OperationTypeService } from 'src/app/core/services/modules/operation/operation-type.service';
-import { LoadUnitService } from 'src/app/core/services/modules/loadunit/loadunit.service';
 import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'app-loadunit-maintainer',
     templateUrl: './compraVenta-main.component.html',
     styleUrls: ['./compraVenta-main.component.scss'],
-    providers: [OperationTypeService, MissionService, LoadUnitService, MessageService]
+    providers: [MessageService]
 })
 export class CompraVentaMainComponent implements OnInit {
 
@@ -20,15 +15,9 @@ export class CompraVentaMainComponent implements OnInit {
  
     loading: boolean = false;
 
-    operationTypes: ElementTypeDto[];
-    Operaciones: ElementTypeDto[];
     public form: FormGroup;
 
-    loadUnits: CargaDto[] = [];
-
-    constructor(private operationTypeService: OperationTypeService,
-        private missionService: MissionService,
-        private loadUnitService: LoadUnitService,
+    constructor(
         private router: Router,
         private messageService: MessageService) {
 

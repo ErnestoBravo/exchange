@@ -11,7 +11,6 @@ const environmentLocal = {
   localHMI: true,
   forceSetKeycloak: false,
   checkLoginIframe: false,
-  operation: 'http://localhost:8080',
   loadunit: 'http://localhost:8080'
 };
 /** LOCAL  */

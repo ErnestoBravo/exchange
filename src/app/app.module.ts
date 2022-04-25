@@ -49,7 +49,6 @@ import { APP_BASE_HREF } from '@angular/common';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 registerLocaleData(localeHe, 'he');
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeEn, 'en');

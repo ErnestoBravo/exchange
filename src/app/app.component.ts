@@ -665,5 +665,14 @@ export class AppComponent implements OnInit {
   viewLoadUnit() {
     this.router.navigate(['loadunit/view']);
 }
+
+abonar() {
+  this.router.navigate(['main/abonar']);
+}
+
+compraVenta() {
+  this.router.navigate(['main/compraVenta']);
+}
+
 }
 

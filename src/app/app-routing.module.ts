@@ -7,6 +7,7 @@ import { Routes, RouterModule, Router } from '@angular/router';
 export const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: 'loadunit', loadChildren: () => import('./modules/loadunit/loadunit.module').then(m => m.LoadUnitModule)},
+  { path: 'main', loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule)},
   { 
     path: '**', 
     redirectTo: ''

@@ -10,29 +10,18 @@ import {MessageService} from 'primeng/api';
     providers: [MessageService]
 })
 export class CompraVentaMainComponent implements OnInit {
-
-  
  
     loading: boolean = false;
-
     public form: FormGroup;
 
     constructor(
         private router: Router,
         private messageService: MessageService) {
 
-        this.form = new FormGroup({
-            operationId: new FormControl(null, Validators.min(0)),
-            operationType: new FormControl(null),
-            mission: new FormControl(null),
-            startDate: new FormControl(null),
-            endDate: new FormControl(null),
-            shipId: new FormControl(null),
-            terminalId: new FormControl(null),
-            rotationNumber: new FormControl(null),
-            storer: new FormControl(null),
-            operator: new FormControl(null),
-        });
+            this.form = new FormGroup({
+                value1: new FormControl(null),
+                value2: new FormControl(null),
+            });
     }
 
     ngOnInit(): void {
@@ -42,7 +31,6 @@ export class CompraVentaMainComponent implements OnInit {
     volver() {
         this.router.navigate(['/']);
     }
-
 
     activeState: boolean[] = [true, false, false];
 
@@ -57,5 +45,4 @@ export class CompraVentaMainComponent implements OnInit {
     toggle(index: number) {
         this.activeState[index] = !this.activeState[index];
     }
-
 }

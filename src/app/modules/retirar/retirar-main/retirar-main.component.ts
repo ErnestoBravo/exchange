@@ -11,8 +11,7 @@ import {MessageService} from 'primeng/api';
 })
 export class RetirarMainComponent implements OnInit {
 
- 
-    loading: boolean = false;
+     loading: boolean = false;
 
     public form: FormGroup;
 
@@ -20,22 +19,13 @@ export class RetirarMainComponent implements OnInit {
         private router: Router,
         private messageService: MessageService) {
 
-        this.form = new FormGroup({
-            operationId: new FormControl(null, Validators.min(0)),
-            operationType: new FormControl(null),
-            mission: new FormControl(null),
-            startDate: new FormControl(null),
-            endDate: new FormControl(null),
-            shipId: new FormControl(null),
-            terminalId: new FormControl(null),
-            rotationNumber: new FormControl(null),
-            storer: new FormControl(null),
-            operator: new FormControl(null),
-        });
+            this.form = new FormGroup({
+                value1: new FormControl(null),
+                value2: new FormControl(null),
+            });
     }
 
     ngOnInit(): void {
-
     }
 
     volver() {
@@ -55,5 +45,4 @@ export class RetirarMainComponent implements OnInit {
     toggle(index: number) {
         this.activeState[index] = !this.activeState[index];
     }
-
 }

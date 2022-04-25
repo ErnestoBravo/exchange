@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import {MessageService} from 'primeng/api';
 
 @Component({
@@ -11,10 +10,8 @@ import {MessageService} from 'primeng/api';
     providers: [MessageService]
 })
 export class AbonarMainComponent implements OnInit {
-
   
     loading: boolean = false;
-
     public form: FormGroup;
 
     constructor(
@@ -22,23 +19,14 @@ export class AbonarMainComponent implements OnInit {
         private messageService: MessageService) {
 
         this.form = new FormGroup({
-            operationId: new FormControl(null, Validators.min(0)),
-            operationType: new FormControl(null),
-            mission: new FormControl(null),
-            startDate: new FormControl(null),
-            endDate: new FormControl(null),
-            shipId: new FormControl(null),
-            terminalId: new FormControl(null),
-            rotationNumber: new FormControl(null),
-            storer: new FormControl(null),
-            operator: new FormControl(null),
+            value1: new FormControl(null),
+            value2: new FormControl(null),
         });
     }
 
     ngOnInit(): void {
 
     }
-
 
     volver() {
         this.router.navigate(['/']);
@@ -57,5 +45,4 @@ export class AbonarMainComponent implements OnInit {
     toggle(index: number) {
         this.activeState[index] = !this.activeState[index];
     }
-
 }

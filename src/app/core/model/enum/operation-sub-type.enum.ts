@@ -1,7 +1,0 @@
-export enum OperationSubTypeEnum {
-    CONTENEDORES_VACIOS = "CMCV",
-    CONTENEDORES_FULL = "CMCF",
-    AUTOMOVILES = "CMAU",
-    CARGA_FRACCIONADA = "CMCFR"
-
-}

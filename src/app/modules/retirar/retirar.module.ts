@@ -4,8 +4,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MovarqLanguageModule } from '@mova/movarq-language';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TokenInterceptor } from 'src/app/core/interceptors/token.interceptor';
-import { OperationRoutingModule } from './main-routing.module';
-import { MainComponent } from './main.component';
+import { RetirarRoutingModule } from './retirar-routing.module';
+import { RetirarMainComponent } from './retirar-main/retirar-main.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
@@ -18,8 +18,7 @@ import {CardModule} from 'primeng/card';
 
 @NgModule({
     declarations: [
-        MainComponent
-
+        RetirarMainComponent
     ],
     imports: [
         CommonModule,
@@ -31,7 +30,7 @@ import {CardModule} from 'primeng/card';
         CheckboxModule,
         InputNumberModule,
         DropdownModule,
-        OperationRoutingModule,
+        RetirarRoutingModule,
         MovarqLanguageModule.forRoot({ isolate: false }),
         AccordionModule,
         InputTextModule,
@@ -47,5 +46,5 @@ import {CardModule} from 'primeng/card';
         multi: true
     },]
 })
-export class MainModule {
+export class RetirarModule {
 }

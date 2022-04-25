@@ -10,11 +10,13 @@ import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'app-loadunit-maintainer',
-    templateUrl: './main.component.html',
-    styleUrls: ['./main.component.scss'],
+    templateUrl: './compraVenta-main.component.html',
+    styleUrls: ['./compraVenta-main.component.scss'],
     providers: [OperationTypeService, MissionService, LoadUnitService, MessageService]
 })
-export class MainComponent implements OnInit {
+export class CompraVentaMainComponent implements OnInit {
+
+  
  
     loading: boolean = false;
 
@@ -45,25 +47,14 @@ export class MainComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.listOperationTypes();
+
     }
 
-    listOperationTypes() {
-        this.operationTypeService.listOperationTypes().subscribe(
-            resp => {
-                this.operationTypes = resp;
-            }
-        )
+    volver() {
+        this.router.navigate(['/']);
     }
 
-    abonar() {
-        this.router.navigate(['main/abonar']);
-    }
 
-    compraVenta() {
-        this.router.navigate(['main/compraVenta']);
-    }
-    
     activeState: boolean[] = [true, false, false];
 
     onTabClose(event) {

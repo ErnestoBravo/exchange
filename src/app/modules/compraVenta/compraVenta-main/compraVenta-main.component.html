@@ -1,0 +1,29 @@
+<div class="operation-list">
+    <div class="p-d-flex">
+        <form class="p-col-12" [formGroup]="form">
+            <h1> Pagina Compra Venta.</h1>
+            <br/>
+            <div class="p-grid">
+                <div class="p-col-3">
+                    <p-dropdown optionLabel="elementDescription" dataKey="elementCode" [options]="Operaciones"
+                        formControlName="operationId" placeholder="Operación">
+                    </p-dropdown>
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="value1" placeholder="Número Patente">
+                </div>
+                <div class="p-col-3">
+                    <input type="text" formControlName="value2" placeholder="Número Contenedor">
+                </div>
+            </div>
+
+            <br />
+            <div class="p-grid">
+                <div class="p-col-3">
+                    <p-button label="volver" (onClick)="volver()"></p-button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

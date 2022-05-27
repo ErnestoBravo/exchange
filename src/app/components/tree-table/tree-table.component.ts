@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { UtilsService } from 'src/app/core/services/utils.service';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { TreeNode } from 'primeng/api';
 
@@ -25,10 +25,11 @@ export class TreeTableComponent implements OnInit {
   first = 0;
   itsResponsive = true;
   isMobile = false;
+  translate: any;
 
   constructor(
     public utils: UtilsService,
-    private translate: TranslateService,
+    // private translate: TranslateService,
     public deviceService: DeviceDetectorService
   ) {
     // init values

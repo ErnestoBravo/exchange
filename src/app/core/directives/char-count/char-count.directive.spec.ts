@@ -3,7 +3,6 @@ import { CharCountDirective } from './char-count.directive';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { AuthService } from '@mova/lib-auth';
 import { MOCK_AUTH_SERVICE } from '../../../core/mocks/generics.mock';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -38,7 +37,7 @@ describe('CharCountDirective', () => {
       imports: [FormsModule, ReactiveFormsModule],
       declarations: [CharCountDirective, TestComponent],
       providers: [
-        { provide: AuthService, useValue: MOCK_AUTH_SERVICE }
+        // { provide: AuthService, useValue: MOCK_AUTH_SERVICE }
       ]
     }).createComponent(TestComponent);
     fixture.detectChanges(); // initial binding

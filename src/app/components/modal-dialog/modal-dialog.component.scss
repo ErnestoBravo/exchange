@@ -2,19 +2,25 @@
   &.ui-dialog {
     width: 382px;
     height: 240px;
+    background-color: blue;
 
     .ui-dialog-content {
       height: 15vw;
       text-align: center;
+      background-color: blue;
 
       .loading-content {
         padding-top: 10px;
+        background-color: blue;
 
         .pi-spinner {
           font-size: 7em;
+          background-color: blue;
 
           &:before {
             color: var(--accent);
+            background-color: blue;
+
           }
         }
       }
@@ -22,6 +28,10 @@
   }
 }
 
+.ui-dialog-footer{
+
+  background-color: black;
+}
 
 /* MEDIA QUERIES MOBILE*/
 @media (max-width: 770px) {
@@ -29,13 +39,18 @@
     &.ui-dialog {
       width: 320px;
       height: 200px;
+      background-color: blue;
 
       .ui-dialog-titlebar {
         padding-bottom: 0 !important;
+        background-color: blue;
+
       }
 
       .ui-dialog-content {
         height: 160px;
+        background-color: blue;
+
       }
     }
   }

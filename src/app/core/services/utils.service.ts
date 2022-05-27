@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { AuthService } from '@mova/lib-auth';
+// import { AuthService } from '@mova/lib-auth';
 import * as moment from 'moment';
 import 'moment-timezone';
 import { Observable, of, ReplaySubject } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import * as FileSaver from 'file-saver';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { ConfirmationService } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
@@ -98,11 +98,13 @@ export class UtilsService {
   autoCompleteLists = {};
   isLoading = false;
   dataFile$ = new ReplaySubject<any>();
+  auth: any;
+  translate: any;
 
   constructor(
     public http: HttpClient,
-    private auth: AuthService,
-    public translate: TranslateService,
+    // private auth: AuthService,
+    // public translate: TranslateService,
     public confirmationService: ConfirmationService
   ) {
   }

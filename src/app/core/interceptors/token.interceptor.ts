@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthService } from '@mova/lib-auth';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-    constructor(private auth: AuthService) {}
+    constructor() {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      const authToken = this.auth.gettoken();
+      const authToken = this.gettoken();
       if (authToken !== null) {
         request = request.clone({
           setHeaders: {
@@ -25,4 +24,7 @@ export class TokenInterceptor implements HttpInterceptor {
       }
       return next.handle(request);
     }
+  gettoken() {
+    throw new Error('Method not implemented.');
+  }
 }

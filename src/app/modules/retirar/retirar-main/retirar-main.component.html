@@ -1,24 +1,36 @@
-<div class="operation-list">
-    <div class="p-d-flex">
+<div class="operation-list p-col-6">
+    <div class="p-d-flex p-col-12">
         <form class="p-col-12" [formGroup]="form">
-            <h1> Pagina Retirar.</h1>
-            <br/>
-            <div class="p-grid">
-                <div class="p-col-3">
-                    <input type="text" formControlName="value1" placeholder="Número Patente">
+            <br><br><br><br>
+            <h1> Pagina retirar.</h1>
+
+            <div class="p-grid p-col-2">
+
+                <p-dropdown [options]="coins" formControlName="selectedCoins" optionLabel="name"></p-dropdown>
+                <p-dropdown [options]="paises" formControlName="selectedCity" optionLabel="name"></p-dropdown>
+
+                <div class="p-col-2">
+                    <input type="number" formControlName="montoAbonar" placeholder="cuanto abonaras?">
                 </div>
-                <div class="p-col-3">
-                    <input type="text" formControlName="value2" placeholder="Número Contenedor">
-                </div>
+
+                <!-- <button pButton type="button" label="prueba 5" icon="pi-send"iconPos="right"></button> -->
+
+
             </div>
 
-            <br />
-            <div class="p-grid">
-                <div class="p-col-3">
-                    <p-button label="volver" (onClick)="volver()"></p-button>
-                </div>
+            <p-card class="Dato-de-transferencia " header="DATOS DE TRANSFERENCIA">
+                <li>NOMBRE </li>
+                <li>RUT</li>
+                <li>CUENTA CORRIENTE</li>
+                <li>BANCO</li>
+                <li>CORREO</li>
+
+            </p-card>
+            <div>
+
             </div>
+            <p-fileUpload name="myfile[] p-col-2" url="./upload.php"></p-fileUpload>
+
+            <button pButton type="button p-col-4" label="ENVIAR"></button>
+
         </form>
-    </div>
-
-</div>

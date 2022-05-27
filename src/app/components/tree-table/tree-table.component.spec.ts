@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+// import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UtilsService } from 'src/app/core/services/utils.service';
 import { ConfirmationService } from 'primeng/api';
-import { AuthService } from '@mova/lib-auth';
+// import { AuthService } from '@mova/lib-auth';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { TreeTableComponent } from './tree-table.component';
@@ -21,24 +21,24 @@ describe('TreeTableComponent', () => {
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
       ],
-      imports: [
-        HttpClientModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: (http: HttpClient) => {
-              return new TranslateHttpLoader(http);
-            },
-            deps: [HttpClient]
-          }
-        }),
-      ],
+      // imports: [
+      //   HttpClientModule,
+      //   TranslateModule.forRoot({
+      //     loader: {
+      //       provide: TranslateLoader,
+      //       useFactory: (http: HttpClient) => {
+      //         return new TranslateHttpLoader(http);
+      //       },
+      //       deps: [HttpClient]
+      //     }
+      //   }),
+      // ],
       providers: [
         UtilsService,
         ConfirmationService,
         DeviceDetectorService,
         {
-          provide: AuthService,
+          // provide: AuthService,
           useValue: MOCK_AUTH_SERVICE
         }
       ]

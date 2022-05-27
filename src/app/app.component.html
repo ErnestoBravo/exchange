@@ -1,46 +1,49 @@
-<movarq-auth *ngIf="!isLogged && auth_config" [config]="auth_config" showLiteral=false></movarq-auth>
+<!-- <movarq-auth *ngIf="!isLogged && auth_config" [config]="auth_config" showLiteral=false></movarq-auth> -->
 
-<div *ngIf=isLogged class="mova-quickstart">
+<div  class="mova-quickstart">
   <movarq-topbar2 >
-    <div class="p-col-3">
-      <p-button label="Nombre corporativo" (onClick)="viewLoadUnit()"></p-button>
+    <a href="#">
+      <img src="assets/Images/foto.jpg">
+    </a>    
+    <div class="nombre-corporativo p-col-2">
+      <p-button label="Nombre corporativo" ></p-button>
     </div>
-    <div class="p-col-3">
-      <p-button label="Vista Trader" (onClick)="viewLoadUnit()"></p-button>
+    <div class="vista-trader p-col-2">
+      <p-button label="Vista Trader" ></p-button>
     </div>
-    <div class="p-col-3">
-      <p-button label="Saldo Disponible" (onClick)="viewLoadUnit()"></p-button>
+    <div class="Saldo-Disponible p-col-2">
+      <p-button label="Saldo Disponible" ></p-button>
     </div>
-    <div class="p-col-3">
-      <p-button label="Usuario" (onClick)="viewLoadUnit()"></p-button>
+    <div class="Usuario p-col-2">
+      <p-button label="Usuario" ></p-button>
     </div>
   </movarq-topbar2>
 
-  <div #container class="mova-quickstart__container" (click)="closeSubMenu()">
+  <div #container class="mova-quickstart__container" >
     <router-outlet></router-outlet>
   </div>
 </div>
 
 <br/><br/><br/>
 
-<div class="content-section implementation">
+<div class="content-section implementation p-col-3">
   <div class="card">
-      <p-button label="Abonar" icon="pi pi-search" (onClick)="abonar()"></p-button>
+      <p-button class="p-buttom-lg" label="Abonar" icon="pi pi-search" (onClick)="abonar()"></p-button>
   </div>
 </div>
-<div class="content-section implementation">
+<div class="content-section implementation p-col-3">
   <div>
-      <p-button label="Compra/Venta" icon="pi pi-search" (onClick)="compraVenta()"></p-button>
+      <p-button class="p-buttom-lg" label="Compra/Venta" (onClick)="compraVenta()"></p-button>
   </div>
 </div>
-<div class="content-section implementation">
+<div class="content-section implementation p-col-3">
   <div>
-      <p-button label="Retirar" icon="pi pi-search" (onClick)="retirar()"></p-button>
+      <p-button class="p-buttom-lg" label="Retirar" (onClick)="retirar()"></p-button>
   </div>
 </div>
-<div class="content-section implementation">
+<div class="content-section implementation p-col-3">
   <div>
-      <p-button label="No se" icon="pi pi-search" (onClick)="abonar()"></p-button>
+      <p-button class="p-buttom-lg" label="Ajustes" (onClick)="retirar()"></p-button>
 
   </div>
 </div>

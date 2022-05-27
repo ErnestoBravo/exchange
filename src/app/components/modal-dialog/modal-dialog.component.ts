@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';
-
+import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';  
+import {SharedModule,PrimeTemplate,Footer,Header} from 'primeng/api/shared'
 @Component({
   selector: 'app-modal-dialog',
   templateUrl: './modal-dialog.component.html',

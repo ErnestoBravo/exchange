@@ -16,12 +16,6 @@ import { TabViewModule } from 'primeng/tabview';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MovarqMenu2Module } from '@mova/movarq-menu2';
-import { CardModule, InputclearboxModule, PopoverModule, SearchboxModule } from '@mova/movarq-commons';
-import { LibLoggerModule, LoggerModuleMova, LoggerService, ProvideLoggerModuleConf } from '@mova/lib-logger';
-import { MovarqLanguageModule, MovarqLanguageService, ProvideLanguageModuleConf } from '@mova/movarq-language';
-import { AuthFactory, AuthService } from '@mova/lib-auth';
-import { MovarqAuthModule } from '@mova/movarq-auth';
 
 // iport locales
 import localeEs from '@angular/common/locales/es';
@@ -29,11 +23,9 @@ import localeEn from '@angular/common/locales/en';
 import localeHe from '@angular/common/locales/he';
 
 
-import { MovarqTopbar2Module } from '@mova/movarq-topbar2';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from '../app/core/interceptors/token.interceptor';
 
-import { LibStylesModule } from '@mova/lib-styles';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { DialogModule } from 'primeng/dialog';
@@ -48,6 +40,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { APP_BASE_HREF } from '@angular/common';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { BrowserModule } from '@angular/platform-browser';
+import {AccordionModule} from 'primeng/accordion';
+import {CarouselModule} from 'primeng/carousel';
+
 
 registerLocaleData(localeHe, 'he');
 registerLocaleData(localeEs, 'es');
@@ -60,33 +55,21 @@ registerLocaleData(localeEn, 'en');
   ],
   imports: [
     BrowserModule,
-    LibStylesModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
-    LibLoggerModule,
-    LoggerModuleMova.forRoot(),
-    MovarqLanguageModule,
-    MovarqLanguageModule.forRoot({ isolate: false }),
-    MovarqAuthModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    CardModule,
-    PopoverModule,
-    InputclearboxModule,
+
     ToolbarModule,
     TooltipModule,
     ButtonModule,
     InputTextModule,
     TabViewModule,
-    MovarqTopbar2Module,
     OverlayPanelModule,
-    MovarqMenu2Module,
     PanelMenuModule,
-    CardModule,
-    SearchboxModule,
     ConfirmDialogModule,
     DialogModule,
     DynamicDialogModule,
@@ -96,7 +79,9 @@ registerLocaleData(localeEn, 'en');
     MenubarModule,
     RadioButtonModule,
     InputTextareaModule,
-    InputNumberModule
+    InputNumberModule,
+    AccordionModule,
+    CarouselModule,
   ],
   entryComponents: [
     ModalDialogComponent
@@ -108,15 +93,13 @@ registerLocaleData(localeEn, 'en');
       useClass: TokenInterceptor,
       multi: true
     },
-    MovarqLanguageService,
     ConfirmationService,
     DialogService,
     { provide: APP_BASE_HREF, useValue: window['base-href'] },
-    { provide: AuthService, useFactory: AuthFactory, deps: [LoggerService] },
-    { provide: ProvideLanguageModuleConf, useValue: { _prefix: './assets/i18n/', _suffix: '.json' } },
-    { provide: ProvideLoggerModuleConf, useValue: { loggerClass: 'NGX' } }
+
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+

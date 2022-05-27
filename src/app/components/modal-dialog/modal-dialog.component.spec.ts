@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ModalDialogComponent } from './modal-dialog.component';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';
-import { MOCK_DIALOG_CONFIG, MOCK_DIALOG_REF } from 'src/app/core/mocks/generics.mock';
+import { MOCK_DIALOG_CONFIG } from 'src/app/core/mocks/generics.mock';
 
 describe('ModalDialogComponent', () => {
   let component: ModalDialogComponent;
@@ -13,7 +13,7 @@ describe('ModalDialogComponent', () => {
       providers: [
         {
           provide: DynamicDialogRef,
-          useValue: MOCK_DIALOG_REF
+          // useValue: MOCK_DIALOG_REF
         },
         {
           provide: DynamicDialogConfig,

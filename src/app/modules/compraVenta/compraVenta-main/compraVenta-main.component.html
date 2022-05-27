@@ -1,24 +1,35 @@
-<div class="operation-list">
-    <div class="p-d-flex">
+<div class="operation-list p-col-12">
+  
+    <div class="p-d-flex p-col-12">
+        
         <form class="p-col-12" [formGroup]="form">
-            <h1> Pagina Compra Venta.</h1>
-            <br/>
-            <div class="p-grid">
-                <div class="p-col-3">
-                    <input type="text" formControlName="value1" placeholder="Número Patente">
+            <br><br><br><br>
+            <h1> Compraventa</h1>
+          
+            <div class="p-grid p-col-2">
+                <div class="p-col-12 menu">
+                    <p-tabMenu [model]="items"></p-tabMenu>
+            
                 </div>
-                <div class="p-col-3">
-                    <input type="text" formControlName="value2" placeholder="Número Contenedor">
+                <p-dropdown class="p-col-12" [options]="coins" formControlName="selectedCoins" optionLabel="name"></p-dropdown>
+                <p-dropdown class="p-col-12"  [options]="paises" formControlName="selectedCity" optionLabel="name"></p-dropdown>
+
+<div class="p-col-2">
+                    <input type="number" formControlName="montoAbonar" placeholder="cuanto abonaras?">
                 </div>
+   
+    <!-- <button pButton type="button" label="prueba 5" icon="pi-send"iconPos="right"></button> -->
+
+
             </div>
 
-            <br />
-            <div class="p-grid">
-                <div class="p-col-3">
-                    <p-button label="volver" (onClick)="volver()"></p-button>
-                </div>
-            </div>
-        </form>
-    </div>
+<div>
 
 </div>
+
+<button pButton type="button p-col-4" label="ENVIAR" ></button>
+
+        </form>
+
+        
+

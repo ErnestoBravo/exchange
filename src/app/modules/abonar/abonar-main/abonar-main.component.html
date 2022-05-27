@@ -1,24 +1,37 @@
-<div class="operation-list">
-    <div class="p-d-flex">
+<div class="operation-list p-col-6">
+    <div class="p-d-flex p-col-12">
         <form class="p-col-12" [formGroup]="form">
+            <br><br><br><br>
             <h1> Pagina Abonar.</h1>
-            <br/>
-            <div class="p-grid">
-                <div class="p-col-3">
-                    <input type="text" formControlName="value1" placeholder="Número Patente">
-                </div>
-                <div class="p-col-3">
-                    <input type="text" formControlName="value2" placeholder="Número Contenedor">
-                </div>
+
+            <div class="p-grid p-col-2">
+                <p-dropdown [options]="coins" formControlName="selectedCoins" optionLabel="name"></p-dropdown>
+                <br>
+                <p-dropdown [options]="paises" formControlName="selectedCity" optionLabel="name"></p-dropdown>
+                <br>
+                <input type="number" formControlName="montoAbonar" placeholder="cuanto abonaras?">
             </div>
 
-            <br />
-            <div class="p-grid">
-                <div class="p-col-3">
-                    <p-button label="volver" (onClick)="volver()"></p-button>
+            <p-card class="Dato-de-transferencia " header="DATOS DE TRANSFERENCIA" styleClass="p-card-shadow">
+                <li>NOMBRE </li>
+                <li>RUT</li>
+                <li>CUENTA CORRIENTE</li>
+                <li>BANCO</li>
+                <li>CORREO</li>
+
+                <ng-template pTemplate="footer">
+                    <p-fileUpload name="myfile[] p-col-2" url="./upload.php"></p-fileUpload>
+                </ng-template>
+            </p-card>
+            <br>
+            <!--   <button pButton type="button p-col-4" label="ENVIAR"></button> -->
+
+            <div >
+                <div class="button" >
+                    <p-button label="Enviar" (onClick)="enviar()" icon="pi pi-search"></p-button>
+                </div>
+                <div class="button" >
+                    <p-button label="Volver" (onClick)="volver()"></p-button>
                 </div>
             </div>
         </form>
-    </div>
-
-</div>

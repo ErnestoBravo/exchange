@@ -421,9 +421,9 @@ export const MOCK_CONFIG_CONFIRM = {
   rejectLabel: 'reject'
 };
 
-export const MOCK_DIALOG_REF = {
-  close: jasmine.createSpy('close')
-};
+// export const MOCK_DIALOG_REF = {
+//   close: jasmine.createSpy('close')
+// };
 
 export const MOCK_DIALOG_CONFIG = {
   data: {

@@ -18,59 +18,22 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "input": "node_modules/@mova/lib-styles/assets",
-                "glob": "**/*",
-                "output": "assets"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@mova/lib-styles-designer",
-                "output": "/lib-styles-designer/"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@mova/lib-styles-designer/fonts",
-                "output": "/fonts/"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@mova/lib-styles-designer/mova_high_contrast/fonts",
-                "output": "/fonts2/"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@mova/lib-fonts-icons",
-                "output": "/lib-fonts-icons/"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@mova/lib-fonts-icons/mova",
-                "output": "/mova/"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@mova/lib-fonts-icons/mova2",
-                "output": "/mova2/"
-              }
+              "src/assets"
             ],
             "styles": [
               "node_modules/@angular/cdk/overlay-prebuilt.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeflex/primeflex.css",
-              "node_modules/@mova/lib-styles-designer/mova/theme.css",
-              "node_modules/@mova/lib-styles-designer/fonts/fonts.css",
-              "node_modules/@mova/lib-fonts-icons/style-mova.css",
               "src/scss/styles.scss",
               "node_modules/prismjs/themes/prism-okaidia.css",
               "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
               "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
-              "node_modules/katex/dist/katex.min.css"
+              "node_modules/katex/dist/katex.min.css",
+              "node_modules/primeng/resources/themes/vela-blue/theme.css"
+           
             ],
             "scripts": [
               "node_modules/prismjs/prism.js",
@@ -80,7 +43,13 @@
               "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js",
               "node_modules/marked/lib/marked.js",
               "node_modules/katex/dist/katex.min.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "develop": {
@@ -93,9 +62,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -117,7 +84,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -135,7 +101,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -173,19 +140,6 @@
               "src/scss/styles.scss"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {

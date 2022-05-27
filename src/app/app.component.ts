@@ -1,20 +1,16 @@
-import { Component, ElementRef, Inject, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Subscription, Observable, Subject } from 'rxjs';
-import { LoggerService } from '@mova/lib-logger';
-import { MovarqLanguageService } from '@mova/movarq-language';
-import { AuthService, AuthEvents, IAuthEvent } from '@mova/lib-auth';
-import { MovarqMenu2SubmenuComponent } from '@mova/movarq-menu2';
-import { LibConfigService } from '@mova/lib-config';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Subscription, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { NavigationEnd, Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuItem, ConfirmationService } from 'primeng/api';
 import { UtilsService } from 'src/app/core/services/utils.service';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { ModalDialogComponent } from 'src/app/components/modal-dialog/modal-dialog.component';
+import { DialogService } from 'primeng/dynamicdialog';
 import { HttpClient } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
-
+// import { MOCK_CONFIG_CONFIRM } from './core/mocks/generics.mock';
+// import {BrowserModule} from '@angular/platform-browser';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 export interface AuditTrail {
   user: string;
   action: string;
@@ -28,10 +24,8 @@ export interface AuditTrail {
 })
 
 export class AppComponent implements OnInit {
-  @ViewChild('submenu') submenu: Array<MovarqMenu2SubmenuComponent>;
-  title = 'Exchange';
-  previousUrl = 'exchange_hmi_page_home';
-
+  previousUrl = 'bravo';
+  translateName = 'translate';
   menu = [];
 
   logos = ['assets/icons/logo.PNG', 'assets/icons/LOGO_TOPBAR.PNG'];
@@ -41,11 +35,10 @@ export class AppComponent implements OnInit {
   configLan: any;
   showLangActive: boolean;
   isLogged: boolean;
-  clientes$: Observable<IAuthEvent>;
   errorModal = false;
   version = '';
   keycloakName = '_Keycloak';
-  translateName = 'translate';
+  // translateName = 'translate';
   configModal = {
     loading: false,
     header: null,
@@ -71,6 +64,11 @@ export class AppComponent implements OnInit {
   private searchValueSubject = new Subject<string>();
 
   private searchValue: string;
+  translate: any;
+  clientes$: any;
+  auth: any;
+  libconfigService: any;
+  logger: any;
 
   set searchModel(value: string) {
     this.searchValueSubject.next(value);
@@ -90,10 +88,6 @@ export class AppComponent implements OnInit {
   REALM;
   URL_REDIRECT;
   constructor(
-    private logger: LoggerService,
-    public translate: MovarqLanguageService,
-    public auth: AuthService,
-    private libconfigService: LibConfigService,
     public router: Router,
     private renderer: Renderer2,
     public confirmationService: ConfirmationService,
@@ -240,6 +234,9 @@ export class AppComponent implements OnInit {
       }
     );
   }
+  errorDialogOpen(arg0: null) {
+    throw new Error('Method not implemented.');
+  }
 
   public addToDiccionary(items): void {
     const CURRENT_LANG = this.translate[this.translateName].store.currentLang;
@@ -318,10 +315,7 @@ export class AppComponent implements OnInit {
   public event(num) {
     this.logger.log('Next num: ' + num._event);
 
-    if (num._event === AuthEvents.AuthEventsSuccess) {
-      this.logger.log('AuthEventsSuccess');
-      this.auth.getemail();
-      this.userName = this.auth.getusername();
+ 
 
       // save user permissions
       this.setUserPermissions();
@@ -340,229 +334,7 @@ export class AppComponent implements OnInit {
 
       this.getDiccionary();
 
-    } else if (num._event === AuthEvents.AuthEventsLogout) {
-      this.auth.logout();
-    } else if (num._event === AuthEvents.AuthEventsTokenRefreshError) {
-      // location.href = 'http://localhost:4200';
-      this.logger.log('AuthEventsTokenRefreshError');
-    } else if (num._event === AuthEvents.AuthEventsPermissionsChanged) {
-      this.logger.log('cliente', num._client);
-      this.logger.log('autorizacion:', this.auth.getauthorization('PUT', 'resource1', 'back'));
-      const po = this.auth.getpermissions(['back']);
-      // console.log('result:', po);
-    }
-  }
-
-  menuClickHandler(item): void {
-    if (typeof item !== 'undefined' && item !== null) {
-
-      if (typeof item.target === 'undefined' || item.target === null || item.target === '_self') {
-        this.router.navigate([item.routerLink || item.url]);
-      } else if (typeof item.target !== 'undefined' && item.target !== null && item.target === '_blank') {
-        window.open(item.routerLink || item.url, '_blank');
-      }
-
-      if (typeof item.command !== 'undefined' && item.command !== null) {
-        item.command();
-      }
-    }
-  }
-
-  public closeDialog(): void {
-    this.errorModal = false;
-  }
-
-  public openSubMenu(item): void {
-    // set selected submenu items
-    this.filteredItems$ = item.items;
-  }
-
-  public closeSubMenu(): void {
-    if (typeof this.submenu !== 'undefined') {
-      this.submenu.forEach((item) => {
-        item.close();
-      });
-    }
-  }
-
-  public subMenuButtonsAction(button): void {
-    if (button.action !== null) {
-      this[button.action]();
-    }
-  }
-  public dialogOpen(config): DynamicDialogRef {
-    return this.dialogService.open(ModalDialogComponent, {
-      closable: true,
-      styleClass: 'success-dialog',
-      data: {
-        buttons: [{
-          label: this.translate.instant('GENERICS.confirm'),
-          class: ''
-        }],
-        header: config.header,
-        message: config.message,
-        loading: false
-      }
-    });
-  }
-
-  public loadingDialogOpen(message): DynamicDialogRef {
-    return this.dialogService.open(ModalDialogComponent, {
-      styleClass: 'ui-loading',
-      closable: false,
-      data: {
-        message: message || this.translate.instant('GENERICS.loading'),
-        loading: true
-      }
-    });
-  }
-  public errorDialogOpen(err): DynamicDialogRef {
-
-    let header = this.translate.instant('GENERICS.error_TITLE');
-    let message = this.translate.instant('GENERICS.error');
-
-    if (typeof err !== 'undefined' && err !== null) {
-      header = this.translate.instant('GENERICS.error_TITLE');
-      message = '';
-
-      if (typeof err.error !== 'undefined' && err.error !== null && typeof err.error.errors !== 'undefined' && err.error.errors !== null) {
-        if (err.error.errors.length === 1) {
-          err.error.errors.forEach(element => {
-            if (element !== null) {
-              if (element.indexOf('#') !== -1) {
-                const firstError = element.split('#').shift();
-                let errors = element.split('#');
-                errors.shift();
-                errors = errors.map(a => a = this.translate.instant('GENERICS.' + a));
-                const msg = this.translate.instant('GENERICS.' + firstError, Object.assign({}, errors));
-                message += msg + '\n\n';
-              } else {
-                const msg = this.translate.instant('GENERICS.' + element);
-                message += msg + '\n\n';
-              }
-            }
-          });
-
-        }
-      }
-    }
-
-    if (message === '') {
-      message = this.translate.instant('GENERICS.error');
-    }
-
-    // return this.dialogService.open(ModalDialogComponent, {
-    //   closable: true,
-    //   styleClass: 'error-dialog',
-    //   data: {
-    //     buttons: [{
-    //       label: this.translate.instant('GENERICS.confirm'),
-    //       class: ''
-    //     }],
-    //     header,
-    //     message,
-    //     loading: false
-    //   }
-    // });
-    return null;
-  }
-
-  public logOutPermission(): void {
-    this.dialogService.open(ModalDialogComponent, {
-      closable: false,
-      data: {
-        message: this.translate.instant('ERRORS.permissions'),
-        loading: false
-      }
-    });
-
-    setTimeout(() => {
-      this.logOut = true;
-      this.logOutApp();
-    }, 5000);
-  }
-
-  public logOutApp() {
-    const MSG = this.translate.instant('GENERICS.closeSession');
-    const DIALOG = this.loadingDialogOpen(MSG);
-    const ITEM_KEYCLOAK = this.auth[this.keycloakName];
-
-    if (typeof ITEM_KEYCLOAK !== 'undefined' && ITEM_KEYCLOAK !== null) {
-      const LOG_OUT = {
-        token: ITEM_KEYCLOAK.token,
-        refreshToken: ITEM_KEYCLOAK.refreshToken,
-        idToken: ITEM_KEYCLOAK.idToken
-      };
-
-      this.utils.restService('logout', {
-        method: 'post',
-        params: LOG_OUT,
-        error: (err) => {
-          // close dialog
-          DIALOG.destroy();
-
-          this.errorDialogOpen(null);
-        }
-      }).subscribe(
-        (returnData) => {
-          this.auth.logout();
-        }
-      );
-    }
-  }
-
-  public confirm(config): void {
-    let icon = 'pi pi-times';
-    let header = null;
-    this.extraClasses = '';
-    this.utils.extraClasses = '';
-
-    if (typeof config.icon !== 'undefined' && config.icon !== null) {
-      icon = config.icon;
-    }
-
-    if (typeof config.header !== 'undefined' && config.header !== null) {
-      header = config.header;
-    }
-
-    if (typeof config.classes !== 'undefined' && config.classes !== null) {
-      this.extraClasses = config.classes;
-    }
-    const objectConfirmConfig = {
-      header,
-      key: config.key || 'first',
-      message: config.message,
-      icon,
-      acceptIcon: 'null',
-      acceptLabel: config.acceptLabel,
-      accept: () => {
-        if (config.acceptCallBack) {
-          config.acceptCallBack();
-        } else {
-          return;
-        }
-      },
-      rejectIcon: 'null',
-      rejectLabel: config.rejectLabel,
-      rejectButtonStyleClass: 'ui-button-outlined',
-      reject: () => {
-        return;
-      }
-    };
-
-    if (typeof config.rejectLabel === 'undefined' || config.rejectLabel) {
-      objectConfirmConfig.rejectButtonStyleClass = 'ui-button-outlined ui-hidden';
-    }
-
-    this.confirmationService.confirm(objectConfirmConfig);
-  }
-
-  searchHandler(search: string) {
-    console.log('manual search handler');
-  }
-
-
-  public setUserPermissions(): void {
+    }public setUserPermissions(...args: []): void {
     // console.log('setUserPermissions -> ', this.auth, this.keycloakName, this.auth[this.keycloakName], this.getUserToken());
     this.userPermissions = this.auth[this.keycloakName].tokenParsed.realm_access.roles;
   }
@@ -634,6 +406,9 @@ export class AppComponent implements OnInit {
       }
     );
   }
+  logOutPermission() {
+    throw new Error('Method not implemented.');
+  }
   public parseUserMenu(list, idHome): void {
     if (typeof list !== 'undefined' && list !== null) {
       list.forEach(element => {
@@ -678,5 +453,32 @@ retirar() {
   this.router.navigate(['retirar']);
 }
 
+}
+function logOutApp() {
+  throw new Error('Function not implemented.');
+}
+
+function searchHandler(arg0: any, string: any) {
+  throw new Error('Function not implemented.');
+}
+
+function ngOnInit() {
+  throw new Error('Function not implemented.');
+}
+
+function retirar() {
+  throw new Error('Function not implemented.');
+}
+
+function compraVenta() {
+  throw new Error('Function not implemented.');
+}
+
+function abonar() {
+  throw new Error('Function not implemented.');
+}
+
+function viewLoadUnit() {
+  throw new Error('Function not implemented.');
 }
 

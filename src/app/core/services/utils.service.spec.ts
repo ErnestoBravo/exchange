@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { UtilsService } from './utils.service';
-import { AuthService, AuthEvents } from '@mova/lib-auth';
+// import { AuthService, AuthEvents } from '@mova/lib-auth';
 import { ReactiveFormsModule, FormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MOCK_ARRAY_DATA, MOCK_AUTH_SERVICE, MOCK_BASE_64, MOCK_PARAMS, MOCK_REST_LIST } from 'src/app/core/mocks/generics.mock';
 import { of } from 'rxjs';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+// import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ConfirmationService } from 'primeng/api';
 
 describe('UtilsService', () => {
@@ -19,22 +19,22 @@ describe('UtilsService', () => {
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: (http: HttpClient) => {
-              return new TranslateHttpLoader(http);
-            },
-            deps: [HttpClient]
-          }
-        }),
+        // TranslateModule.forRoot({
+        //   loader: {
+        //     provide: TranslateLoader,
+        //     useFactory: (http: HttpClient) => {
+        //       return new TranslateHttpLoader(http);
+        //     },
+        //     deps: [HttpClient]
+        //   }
+        // }),
       ],
       providers: [
         HttpHandler,
         HttpClient,
         ConfirmationService,
         {
-          provide: AuthService,
+          // provide: AuthService,
           useValue: MOCK_AUTH_SERVICE
         },
         {
@@ -42,7 +42,7 @@ describe('UtilsService', () => {
           useValue: FORM_BUILDER
         },
         {
-          provide: AuthEvents,
+          // provide: AuthEvents,
           useValue: {
             AuthEventsSuccess: 5,
             AuthEventsLogout: 2,

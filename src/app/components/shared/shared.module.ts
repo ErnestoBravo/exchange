@@ -16,8 +16,8 @@ import { ComposeObjectPipe } from '../../core/pipes/compose-object.pipe';
 
 
 // Translation
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+// import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
@@ -38,23 +38,23 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     InputSwitchModule,
     CheckboxModule,
     TooltipModule,
-    TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (http: HttpClient) => {
-          return new TranslateHttpLoader(http);
-        },
-        deps: [HttpClient]
-      },
-      isolate: false
-    }),
+    // TranslateModule.forChild({
+    //   loader: {
+    //     provide: TranslateLoader,
+    //     useFactory: (http: HttpClient) => {
+    //       return new TranslateHttpLoader(http);
+    //     },
+    //     deps: [HttpClient]
+    //   },
+    //   isolate: false
+    // }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
     RouterModule,
     // TableComponent,
     TreeTableComponent,
-    TranslateModule,
+    // TranslateModule,
     TableModule,
     TreeTableModule,
     ComposeObjectPipe

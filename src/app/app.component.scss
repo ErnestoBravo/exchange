@@ -1,3 +1,5 @@
+// css general previo//
+
 .operation-list{
   margin-top: 20px;
   height: 100%;
@@ -10,4 +12,117 @@
 
 .action-button{
   margin:2px;
+
+  //CSS de curso (sirve para ver el butto negro)//
 }
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+html, body {
+  
+  background: black;
+  margin: 20px;
+  color: #3e4144;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+dd {
+  font-weight: bold;
+}
+
+button {
+  background-color: black;
+  border-radius: 5px;
+  border: 0px;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  background-color: #3e4144;
+}
+
+button:focus{ 
+  outline: none;
+}
+
+.p-1 {
+  padding: 1px;
+}
+
+
+// pruebas nuevas para modificar diseños 
+
+// .img{
+
+// text-align: right;
+// padding-left: 0%;
+// }
+
+// .myfile{
+
+//   background-color: black ;
+// }
+
+//( aca pude cambiar el fondo del header y poner la imagen anclada a un url en este caso)
+ .mova-quickstart{
+
+  //  background-color: blue;
+   color: black;
+   flex: auto;
+   position: relative;
+   background-image: url(https://www.lasertam.com/wp-content/uploads/2017/11/fondo-header-01.jpg)
+   
+   
+ }
+ .content-section{
+
+  background-color: aqua ;
+ }
+ .card{
+
+  background-color: aqua ;
+  color: blue;
+ }
+ .p-button{
+  color: blue;
+
+ }
+
+//  botones header
+
+
+.nombre-corporativo{
+
+  text-align: right;
+  float: right;
+  position: relative;
+  
+}
+.vista-trader{
+
+  float: right;
+  position: relative;
+
+}
+.Saldo-Disponible{
+
+  float: right;
+  position: relative;
+}
+.Usuario{
+
+  float: right;
+  position: relative;
+}
+
+// .mova-quickstart__container{
+// background-color: black;
+//   background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fes%2Ffotos%2Ffondo-azul&psig=AOvVaw1L8y8UhgMHWqlqNIEvo-tc&ust=1653680207369000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCID53of1_fcCFQAAAAAdAAAAABAP);
+// }

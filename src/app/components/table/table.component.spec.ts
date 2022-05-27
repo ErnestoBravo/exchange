@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TableComponent } from '../table/table.component';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
@@ -10,7 +8,6 @@ import { ButtonModule } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { UtilsService } from 'src/app/core/services/utils.service';
 import { ConfirmationService } from 'primeng/api';
-import { AuthService } from '@mova/lib-auth';
 import { MOCK_AUTH_SERVICE } from 'src/app/core/mocks/generics.mock';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { FileUpload, FileUploadModule } from 'primeng/fileupload';
@@ -48,15 +45,7 @@ describe('TableComponent', () => {
         InputSwitchModule,
         HttpClientModule,
         FileUploadModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: (http: HttpClient) => {
-              return new TranslateHttpLoader(http);
-            },
-            deps: [HttpClient]
-          }
-        }),
+       
       ],
       providers: [
         UtilsService,
@@ -64,7 +53,6 @@ describe('TableComponent', () => {
         DeviceDetectorService,
         FileUpload,
         {
-          provide: AuthService,
           useValue: MOCK_AUTH_SERVICE
         }
       ],

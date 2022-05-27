@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, Input, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
 import { Paginator } from 'primeng/paginator';
 import { UtilsService } from './../../core/services/utils.service';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { SortEvent } from 'primeng/api';
 import * as moment from 'moment';
@@ -10,7 +10,7 @@ import 'moment-timezone';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  providers:[TranslateService,UtilsService,DeviceDetectorService],
+  providers:[UtilsService,DeviceDetectorService],
   styleUrls: ['./table.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
@@ -30,10 +30,11 @@ export class TableComponent implements OnInit, AfterViewInit {
   first = 0;
   itsResponsive = true;
   isMobile = false;
+  translate: any;
 
   constructor(
     public utils: UtilsService,
-    private translate: TranslateService,
+    // private translate: TranslateService,
     public deviceService: DeviceDetectorService
   ) {
     // init values
